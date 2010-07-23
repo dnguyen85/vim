@@ -1,0 +1,4 @@
+screen.vba: call delete('/home/dhn24/.vim/plugin/screen.vim')|call delete('/home/dhn24/.vim/doc/screen.txt')
+supertab.vba: call delete('/home/dhn24/.vim/doc/supertab.txt')|call delete('/home/dhn24/.vim/plugin/supertab.vim')
+conque_1.1.vba: call delete('/home/dhn24/.vim/autoload/conque_term.vim')|call delete('/home/dhn24/.vim/doc/conque_term.txt')|call delete('/home/dhn24/.vim/plugin/conque_term.vim')|call delete('/home/dhn24/.vim/syntax/conque_term.vim')
+Align.vba: call delete('/home/dhn24/.vim/plugin/AlignPlugin.vim')|call delete('/home/dhn24/.vim/plugin/AlignMapsPlugin.vim')|call delete('/home/dhn24/.vim/plugin/cecutil.vim')|call delete('/home/dhn24/.vim/doc/Align.txt')|call delete('/home/dhn24/.vim/autoload/Align.vim')|call delete('/home/dhn24/.vim/autoload/AlignMaps.vim')

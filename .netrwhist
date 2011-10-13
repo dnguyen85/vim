@@ -1,9 +1,9 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/dhn24/mnt/Tux/ECEC622/par_fft'
-let g:netrw_dirhist_2='/home/dhn24/mnt/Tux/ECEC622/par_fft/FFT_old'
-let g:netrw_dirhist_3='/home/dhn24/mnt/Tux/ECEC622/par_fft'
-let g:netrw_dirhist_4='/home/dhn24/mnt/Tux/ECEC622/par_fft/FFT'
-let g:netrw_dirhist_5='/home/dhn24/Research/MRI/warplab_port/4dsp_frontend/MyProcessorIPLib/pcores/test_frontend_v1_00_a/hdl'
-let g:netrw_dirhist_6='/home/dhn24/Research/MRI/warplab_port/4dsp_frontend/MyProcessorIPLib/pcores/test_frontend_v1_00_a/hdl/vhdl'
-let g:netrw_dirhist_7='/home/dhn24/Research/MRI/warplab_port/4dsp_frontend/MyProcessorIPLib/pcores/test_frontend_v1_00_a/hdl'
+let g:netrw_dirhist_1='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate'
+let g:netrw_dirhist_2='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110'
+let g:netrw_dirhist_3='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate'
+let g:netrw_dirhist_4='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate/modelsim'
+let g:netrw_dirhist_5='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate/vhdl/fmc110_model'
+let g:netrw_dirhist_6='/home/dhn24/spiral/SDR/WiFi_BER'
+let g:netrw_dirhist_7='/home/dhn24/spiral/SDR/WiFi'

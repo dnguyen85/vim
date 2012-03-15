@@ -1,9 +1,9 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate'
-let g:netrw_dirhist_2='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110'
-let g:netrw_dirhist_3='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate'
-let g:netrw_dirhist_4='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate/modelsim'
-let g:netrw_dirhist_5='/home/dhn24/Research/MRI/4DSP/Support/Refs/Firmware/ml605/FMC110/simulate/vhdl/fmc110_model'
-let g:netrw_dirhist_6='/home/dhn24/spiral/SDR/WiFi_BER'
-let g:netrw_dirhist_7='/home/dhn24/spiral/SDR/WiFi'
+let g:netrw_dirhist_1='/home/dhn24/Documents/ECE-T512/2011/Assign_4'
+let g:netrw_dirhist_2='/home/dhn24/Documents/ECE-T512/2011/Assign_4/Bielinski'
+let g:netrw_dirhist_3='/home/dhn24/research/4dsp'
+let g:netrw_dirhist_4='/home/dhn24/Dropbox/school/ECE-T512/HW/dnguyen-hw6'
+let g:netrw_dirhist_5='/home/dhn24/Dropbox/school/ECE-T512/HW/dnguyen-hw6/doc'
+let g:netrw_dirhist_6='/home/dhn24/Dropbox/school/ECE-T512/HW/dnguyen-hw6'
+let g:netrw_dirhist_7='/home/dhn24/Dropbox/school/ECE-T512/HW/dnguyen-hw6/src'

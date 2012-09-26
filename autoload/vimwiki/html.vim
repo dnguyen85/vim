@@ -315,9 +315,9 @@ function! s:tag_strike(value) "{{{
   return '<del>'.s:mid(a:value, 2).'</del>'
 endfunction "}}}
 
-function! s:tag_super(value) "{{{
-  return '<sup><small>'.s:mid(a:value, 1).'</small></sup>'
-endfunction "}}}
+" function! s:tag_super(value) "{{{
+  " return '<sup><small>'.s:mid(a:value, 1).'</small></sup>'
+" endfunction "}}}
 
 function! s:tag_sub(value) "{{{
   return '<sub><small>'.s:mid(a:value, 2).'</small></sub>'
@@ -546,7 +546,7 @@ function! s:process_tags_typefaces(line) "{{{
   let line = s:make_tag(line, g:vimwiki_rxBold, 's:tag_strong')
   let line = s:make_tag(line, g:vimwiki_rxTodo, 's:tag_todo')
   let line = s:make_tag(line, g:vimwiki_rxDelText, 's:tag_strike')
-  let line = s:make_tag(line, g:vimwiki_rxSuperScript, 's:tag_super')
+  " let line = s:make_tag(line, g:vimwiki_rxSuperScript, 's:tag_super')
   let line = s:make_tag(line, g:vimwiki_rxSubScript, 's:tag_sub')
   let line = s:make_tag(line, g:vimwiki_rxCode, 's:tag_code')
   return line

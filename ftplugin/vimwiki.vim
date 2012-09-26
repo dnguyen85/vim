@@ -380,7 +380,6 @@ nnoremap <silent><script><buffer>
 " Misc mappings
 inoremap <buffer> <S-CR> <br /><CR>
 
-
 " Text objects {{{
 onoremap <silent><buffer> ah :<C-U>call vimwiki#base#TO_header(0, 0)<CR>
 vnoremap <silent><buffer> ah :<C-U>call vimwiki#base#TO_header(0, 1)<CR>
@@ -402,6 +401,138 @@ vnoremap <silent><buffer> ic :<C-U>call vimwiki#base#TO_table_col(1, 1)<CR>
 
 nnoremap <silent><buffer> = :call vimwiki#base#AddHeaderLevel()<CR>
 nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
+
+" }}}
+
+" Danh Mod
+" short forms for latex formatting and math elements. {{{
+" taken from auctex.vim or miktexmacros.vim
+call IMAP ('__', '_{<++>}<++>', '')
+call IMAP ('()', '(<++>)<++>', '')
+call IMAP ('[]', '[<++>]<++>', '')
+call IMAP ('{}', '{<++>}<++>', '')
+call IMAP ('^^', '^{<++>}<++>', '')
+call IMAP ('$$', '$<++>$<++>', '')
+" call IMAP ('==', '&=& ', '')
+call IMAP ('~~', '&\approx& ', '')
+call IMAP ('=~', '\approx', '')
+call IMAP ('::', '\dots', '')
+call IMAP ('((', '\left( <++> \right)<++>', '')
+" call IMAP ('[[', '\left[ <++> \right]<++>', '')
+" call IMAP ('{{', '\left\{ <++> \right\}<++>', '')
+call IMAP (g:mapleader.'^', '\hat{<++>}<++>', '')
+call IMAP (g:mapleader.'_', '\bar{<++>}<++>', '')
+call IMAP (g:mapleader.'6', '\partial', '')
+call IMAP (g:mapleader.'8', '\infty', '')
+call IMAP (g:mapleader.'/', '\frac{<++>}{<++>}<++>', '')
+call IMAP (g:mapleader.'%', '\frac{<++>}{<++>}<++>', '')
+call IMAP (g:mapleader.'@', '\circ', '')
+call IMAP (g:mapleader.'0', '^\circ', '')
+call IMAP (g:mapleader.'=', '\equiv', '')
+call IMAP (g:mapleader."\\",'\setminus', '')
+call IMAP (g:mapleader.'.', '\cdot', '')
+call IMAP (g:mapleader.'*', '\times', '')
+call IMAP (g:mapleader.'&', '\wedge', '')
+call IMAP (g:mapleader.'-', '\bigcap', '')
+call IMAP (g:mapleader.'+', '\bigcup', '')
+call IMAP (g:mapleader.'M', '\sum_{<++>}^{<++>}<++>', '')
+call IMAP (g:mapleader.'(', '\subset', '')
+call IMAP (g:mapleader.')', '\supset', '')
+call IMAP (g:mapleader.'<', '\le', '')
+call IMAP (g:mapleader.'>', '\ge', '')
+call IMAP (g:mapleader.',', '\nonumber', '')
+call IMAP (g:mapleader.'~', '\tilde{<++>}<++>', '')
+call IMAP (g:mapleader.';', '\dot{<++>}<++>', '')
+call IMAP (g:mapleader.':', '\ddot{<++>}<++>', '')
+call IMAP (g:mapleader.'2', '\sqrt{<++>}<++>', '')
+call IMAP (g:mapleader.'|', '\Big|', '')
+call IMAP (g:mapleader.'I', "\\int_{<++>}^{<++>}<++>", '')
+" Danh's Macro
+" \mathbf
+call IMAP (g:mapleader.'BF', "\\mathbf{<++>}<++>", '')
+" \mathbb
+call IMAP (g:mapleader.'BB', "\\mathbb{<++>}<++>", '')
+" \text
+call IMAP (g:mapleader.'TE', "\\text{<++>}<++>", '')
+" \textbf
+call IMAP (g:mapleader.'TB', "\\textbf{<++>}<++>", '')
+" \textit
+call IMAP (g:mapleader.'TI', "\\textit{<++>}<++>", '')
+" }}}
+" Greek Letters {{{
+call IMAP(g:mapleader.'a', '\alpha', '')
+call IMAP(g:mapleader.'b', '\beta', '')
+call IMAP(g:mapleader.'c', '\chi', '')
+call IMAP(g:mapleader.'d', '\delta', '')
+call IMAP(g:mapleader.'e', '\varepsilon', '')
+call IMAP(g:mapleader.'f', '\varphi', '')
+call IMAP(g:mapleader.'g', '\gamma', '')
+call IMAP(g:mapleader.'h', '\eta', '')
+call IMAP(g:mapleader.'k', '\kappa', '')
+call IMAP(g:mapleader.'l', '\lambda', '')
+call IMAP(g:mapleader.'m', '\mu', '')
+call IMAP(g:mapleader.'n', '\nu', '')
+call IMAP(g:mapleader.'p', '\pi', '')
+call IMAP(g:mapleader.'q', '\theta', '')
+call IMAP(g:mapleader.'r', '\rho', '')
+call IMAP(g:mapleader.'s', '\sigma', '')
+call IMAP(g:mapleader.'t', '\tau', '')
+call IMAP(g:mapleader.'u', '\upsilon', '')
+call IMAP(g:mapleader.'v', '\varsigma', '')
+call IMAP(g:mapleader.'w', '\omega', '')
+" call IMAP(g:mapleader.'w', '\wedge', '')  " AUCTEX style
+call IMAP(g:mapleader.'x', '\xi', '')
+call IMAP(g:mapleader.'y', '\psi', '')
+call IMAP(g:mapleader.'z', '\zeta', '')
+" not all capital greek letters exist in LaTeX!
+" reference: http://www.giss.nasa.gov/latex/ltx-405.html
+call IMAP(g:mapleader.'D', '\Delta', '')
+call IMAP(g:mapleader.'F', '\Phi', '')
+call IMAP(g:mapleader.'G', '\Gamma', '')
+call IMAP(g:mapleader.'Q', '\Theta', '')
+call IMAP(g:mapleader.'L', '\Lambda', '')
+call IMAP(g:mapleader.'X', '\Xi', '')
+call IMAP(g:mapleader.'Y', '\Psi', '')
+call IMAP(g:mapleader.'S', '\Sigma', '')
+call IMAP(g:mapleader.'U', '\Upsilon', '')
+call IMAP(g:mapleader.'W', '\Omega', '')
+" }}}
+" ProtectLetters: sets up indentity maps for things like ``a {{{
+" " Description: If we simply do
+" 		call IMAP('`a', '\alpha', '')
+" then we will never be able to type 'a' after a tex-quotation. Since
+" IMAP() always uses the longest map ending in the letter, this problem
+" can be avoided by creating a fake map for ``a -> ``a.
+" This function sets up fake maps of the following forms:
+" 	``[aA]  -> ``[aA]    (for writing in quotations)
+" 	\`[aA]  -> \`[aA]    (for writing diacritics)
+" 	"`[aA]  -> "`[aA]    (for writing german quotations)
+" It does this for all printable lower ascii characters just to make sure
+" we dont let anything slip by.
+function! s:ProtectLetters(first, last)
+  let i = a:first
+  while i <= a:last
+    if nr2char(i) =~ '[[:print:]]'
+      call IMAP('``'.nr2char(i), '``'.nr2char(i), '')
+      call IMAP('\`'.nr2char(i), '\`'.nr2char(i), '')
+      call IMAP('"`'.nr2char(i), '"`'.nr2char(i), '')
+    endif
+    let i = i + 1
+  endwhile
+endfunction 
+call s:ProtectLetters(32, 127)
+" }}}
+" vmaps: enclose selected region in brackets, environments {{{ 
+" The action changes depending on whether the selection is character-wise
+" or line wise. for example, selecting linewise and pressing \v will
+" result in the region being enclosed in \begin{verbatim}, \end{verbatim},
+" whereas in characterise visual mode, the thingie is enclosed in \verb|
+" and |.
+exec 'vnoremap <silent> '.g:mapleader."( \<C-\\>\<C-N>:call VEnclose('\\left( ', ' \\right)', '\\left(', '\\right)')\<CR>"
+exec 'vnoremap <silent> '.g:mapleader."[ \<C-\\>\<C-N>:call VEnclose('\\left[ ', ' \\right]', '\\left[', '\\right]')\<CR>"
+exec 'vnoremap <silent> '.g:mapleader."{ \<C-\\>\<C-N>:call VEnclose('\\left\\{ ', ' \\right\\}', '\\left\\{', '\\right\\}')\<CR>"
+exec 'vnoremap <silent> '.g:mapleader."$ \<C-\\>\<C-N>:call VEnclose('$', '$', '\\[', '\\]')\<CR>"
+" }}}
 
 " }}}
 

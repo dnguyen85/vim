@@ -416,7 +416,7 @@ call IMAP ('$$', '$<++>$<++>', '')
 " call IMAP ('==', '&=& ', '')
 call IMAP ('~~', '&\approx& ', '')
 call IMAP ('=~', '\approx', '')
-call IMAP ('::', '\dots', '')
+" call IMAP ('::', '\dots', '') -- commented out for C++ namespace programming
 call IMAP ('((', '\left( <++> \right)<++>', '')
 " call IMAP ('[[', '\left[ <++> \right]<++>', '')
 " call IMAP ('{{', '\left\{ <++> \right\}<++>', '')

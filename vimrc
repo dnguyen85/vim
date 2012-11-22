@@ -169,11 +169,6 @@ let g:SuperTabMappingBackward = '<C-S-CR>'
 nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 let g:EclimTaglistEnable = 0
 
-" FuzzyFinder plugin
-" map <leader>t :FuzzyFinderTextMate<CR>
-" map <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
-" map <leader>s :let g:fuzzy_roots=['.']
-
 " Tab completion acts more like bash, presenting list of options
 set wildmode=longest,list
 

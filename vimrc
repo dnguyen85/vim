@@ -21,6 +21,9 @@ map Z zO
 " Map changing directory to current file location
 map <F2> :lcd %:p:h<CR>
 
+" Pathogen
+call pathogen#infect()
+
 " Set font
 "set guifont=Terminus\ 8
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 9

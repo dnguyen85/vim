@@ -169,9 +169,6 @@ let g:SuperTabMappingBackward = '<C-S-CR>'
 nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 let g:EclimTaglistEnable = 0
 
-" Conque Term plugin
-nnoremap <silent> <F10> :ConqueTerm bash<CR>
-
 " FuzzyFinder plugin
 " map <leader>t :FuzzyFinderTextMate<CR>
 " map <leader>r :FuzzyFinderTextMateRefreshFiles<CR>

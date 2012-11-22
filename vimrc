@@ -23,6 +23,7 @@ map <F2> :lcd %:p:h<CR>
 
 " Pathogen
 call pathogen#infect()
+call pathogen#helptags()
 
 " Set font
 "set guifont=Terminus\ 8
@@ -168,6 +169,11 @@ let g:SuperTabMappingBackward = '<C-S-CR>'
 " Eclim plugin
 nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 let g:EclimTaglistEnable = 0
+
+" FuzzyFinder plugin - old / need updated
+" map <leader>t :FuzzyFinderTextMate<CR>
+" map <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
+" map <leader>s :let g:fuzzy_roots=['.']
 
 " Tab completion acts more like bash, presenting list of options
 set wildmode=longest,list

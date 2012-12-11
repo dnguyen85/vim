@@ -237,6 +237,7 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
 " Vimwiki stuff
 let g:vimwiki_use_mouse = 1
+let g:vimwiki_browsers=['google-chrome']
 " Do not let WikiWord to be a link
 let g:vimwiki_camel_case = 0
 hi VimwikiHeader1 guifg=#B40404
@@ -254,6 +255,9 @@ let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
                      \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp'}}]
 " Remap find previous link on current page
 map <leader>wb :VimwikiAll2HTML<CR><CR>
+" Remap convert page and open link
+map <leader>wl :Vimwiki2HTML<CR><CR>
+map <leader>wll :Vimwiki2HTMLBrowse<CR><CR>
 " Set the open search list shortcut
 map <leader>lo :lopen<CR>
 map <leader>ln :lnext<CR>

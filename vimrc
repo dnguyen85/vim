@@ -62,6 +62,10 @@ set nu
 " Set scroll
 set scrolloff=3
 
+" Set Shift-Tab to reverse Tab
+nmap <S-Tab> <<
+imap <S-Tab> <Esc><<i
+
 " map <F12> :set nu!<CR>
 " highlight LineNr ctermfg=6 ctermbg=9
 set printoptions=number:y
@@ -73,18 +77,10 @@ map <F6> :make test<CR>
 " Typing jj quickly escapes out of INSERT mode
 imap jj <Esc>
 
-" Comment/Uncomment selected lines
-if exists("b:commentsub")
-    map <F4> :s/^/{b:commentsub}/<CR>
-    map <F3> :s/^\(\s*\){b:commentsub}/\1/<CR>
-endif
-
 " Save history options?
 set viminfo='20,"500
 
 " map <F6> :set foldmethod=syntax<CR>
-" map <F7> zO
-" map <F8> zC
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -100,11 +96,6 @@ au BufRead,BufNewFile *.vhh             setfiletype vhdl
 au BufRead,BufNewFile * syn match TAB_CHAR "\t"
 "hi link TAB_CHAR Error
 map <F8> :hi link TAB_CHAR Normal<CR>
-
-" Maps to switch vim tabs
-"map <C-k> gT
-"map <C-j> gt
-map <S-tab> <C-tab>
 
 " For ctags
 " Vertical split open
@@ -174,11 +165,6 @@ let g:SuperTabMappingBackward = '<C-S-CR>'
 " Eclim plugin
 nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 let g:EclimTaglistEnable = 0
-
-" FuzzyFinder plugin - old / need updated
-" map <leader>t :FuzzyFinderTextMate<CR>
-" map <leader>r :FuzzyFinderTextMateRefreshFiles<CR>
-" map <leader>s :let g:fuzzy_roots=['.']
 
 " Tab completion acts more like bash, presenting list of options
 set wildmode=longest,list

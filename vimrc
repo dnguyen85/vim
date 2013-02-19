@@ -108,8 +108,7 @@ map <S-tab> <C-tab>
 
 " For ctags
 " Vertical split open
-" map <A-]> :vsp <CR> <C-w>l :exec("tag ".expand("<cword>"))<CR>
-map <A-]> <C-w>l :exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR> <C-w>l :exec("tag ".expand("<cword>"))<CR>
 map <C-x><C-x><C-T> :!ctags -R --sort=1 --c-kinds=+px -f ~/.vim/tags/commontags /usr/include /usr/local/include<CR><CR>
 map <C-x><C-x><C-R> :!ctags -R *<CR><CR>
 

@@ -106,8 +106,8 @@ map <S-tab> <C-tab>
 " For ctags
 " Vertical split open
 map <A-]> :vsp <CR> <C-w>l :exec("tag ".expand("<cword>"))<CR>
-map <C-x><C-x><C-T> :!ctags --extra=+f -R --sort=1 --c-kinds=+px -f ~/.vim/tags/commontags /usr/include /usr/local/include<CR><CR>
-map <C-x><C-x><C-R> :!ctags --extra=+f -R *<CR><CR>
+map <C-x><C-x><C-T> :!ctags -R --sort=1 --c-kinds=+px -f ~/.vim/tags/commontags /usr/include /usr/local/include<CR><CR>
+map <C-x><C-x><C-R> :!ctags -R *<CR><CR>
 
 " For gf gotoFile in vertical split
 " Remember to :set path+=../**

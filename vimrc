@@ -10,6 +10,9 @@ filetype indent on
 set autoindent
 set smartindent
 
+set ignorecase
+set smartcase
+
 " Set folding
 " set foldmethod=syntax
 
@@ -105,7 +108,8 @@ map <S-tab> <C-tab>
 
 " For ctags
 " Vertical split open
-map <A-]> :vsp <CR> <C-w>l :exec("tag ".expand("<cword>"))<CR>
+" map <A-]> :vsp <CR> <C-w>l :exec("tag ".expand("<cword>"))<CR>
+map <A-]> <C-w>l :exec("tag ".expand("<cword>"))<CR>
 map <C-x><C-x><C-T> :!ctags --extra=+f -R --sort=1 --c-kinds=+px -f ~/.vim/tags/commontags /usr/include /usr/local/include<CR><CR>
 map <C-x><C-x><C-R> :!ctags --extra=+f -R *<CR><CR>
 
@@ -131,6 +135,8 @@ let mapleader = ","
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
 map <C-Q> :Bclose<CR>
+map <C-N> :bn<CR>
+map <C-P> :bp<CR>
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapAltNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -236,6 +242,8 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 " highlight SpellLocal term=underline cterm=underline
 
 " Vimwiki stuff
+let g:vimwiki_html_header_numbering_sym = '.'
+let g:vimwiki_html_header_numbering = 4
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_browsers=['google-chrome']
 " Do not let WikiWord to be a link
@@ -243,7 +251,7 @@ let g:vimwiki_camel_case = 0
 hi VimwikiHeader1 guifg=#B40404
 hi VimwikiHeader2 guifg=#00FF00
 hi VimwikiHeader3 guifg=#0000FF
-hi VimwikiHeader4 guifg=#FF00FF
+hi VimwikiHeader4 guifg=#FF0040
 hi VimwikiHeader5 guifg=#00FFFF
 hi VimwikiHeader6 guifg=#FFFF00
 let g:vimwiki_hl_headers = 1
@@ -252,7 +260,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
                      \ 'auto_export' : 0,
                      \ 'template_path': '~/Dropbox/www/',
                      \ 'template_default': 'template', 
-                     \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp'}}]
+                     \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html'}}]
 " Remap find previous link on current page
 map <leader>wb :VimwikiAll2HTML<CR><CR>
 " Remap convert page and open link

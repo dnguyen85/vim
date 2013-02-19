@@ -413,13 +413,20 @@ call IMAP ('[]', '[<++>]<++>', '')
 call IMAP ('{}', '{<++>}<++>', '')
 call IMAP ('^^', '^{<++>}<++>', '')
 call IMAP ('$$', '$<++>$<++>', '')
+call IMAP ('||', '|<++>|<++>', '')
 " call IMAP ('==', '&=& ', '')
 call IMAP ('~~', '&\approx& ', '')
 call IMAP ('=~', '\approx', '')
 " call IMAP ('::', '\dots', '') -- commented out for C++ namespace programming
-call IMAP ('((', '\left( <++> \right)<++>', '')
-" call IMAP ('[[', '\left[ <++> \right]<++>', '')
-" call IMAP ('{{', '\left\{ <++> \right\}<++>', '')
+call IMAP ('\(', '\left( <++> \right)<++>', '')
+call IMAP ('\[', '\left[ <++> \right]<++>', '')
+call IMAP ('\\{', '\left\{ <++> \right\}<++>', '')
+call IMAP ('\{', '\{ <++> \}<++>', '')
+
+" \preformatted text
+call IMAP (g:mapleader.'{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
+
+" Leader maps
 call IMAP (g:mapleader.'^', '\hat{<++>}<++>', '')
 call IMAP (g:mapleader.'_', '\bar{<++>}<++>', '')
 call IMAP (g:mapleader.'6', '\partial', '')

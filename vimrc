@@ -200,16 +200,23 @@ filetype indent on
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 " For pdf as default compilation, otherwise, use :TCTarget pdf to change on the fly
-" let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_DefaultTargetFormat='pdf'
 "  let g:Tex_MultipleCompileFormats='dvi,pdf'
-let g:Tex_ViewRule_dvi='okular'
-let g:Tex_ViewRule_pdf='acroread'
-let g:Tex_CompileRule_dvi = 'latex --interaction=nonstopmode $*'
+let g:Tex_ViewRule_dvi='okular --unique'
+let g:Tex_ViewRule_pdf='okular --unique'
+let g:Tex_CompileRule_dvi = 'latex -synctex=1 -src-specials -interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps = 'dvips -Ppdf -R0 -o $*.ps $*.dvi'
-let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
-
-let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
+"let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
+let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -src-specials -interaction=nonstopmode $*'
+"let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
 let g:Tex_Leader = ','
+
+function! SyncTexForward()
+let s:syncfile = fnamemodify(fnameescape(Tex_GetMainFileName()), ":r").".pdf"
+let execstr = "silent !okular --unique ".s:syncfile."\\#src:".line(".").expand("%\:p").' &'
+exec execstr
+endfunction
+nnoremap <Leader>lf :call SyncTexForward()<CR>
 
 " Latex paragraph map
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
@@ -245,7 +252,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
                      \ 'auto_export' : 0,
                      \ 'template_path': '~/Dropbox/www/',
                      \ 'template_default': 'template', 
-                     \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html'}}]
+                     \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}}]
 " Remap find previous link on current page
 map <leader>wb :VimwikiAll2HTML<CR><CR>
 " Remap convert page and open link
@@ -258,7 +265,7 @@ map <leader>ln :lnext<CR>
 " Map <F6> to insert images string in insert mode
 inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
 " Map <F5> to insert time stamp in insert mode
-inoremap <F5> <C-R>=strftime("(%H:%M) - ")<CR>
+inoremap <F5> <C-R>=strftime("(%H:%M) ")<CR>
 " Map <F4> to insert Date stamp in insert mode
 inoremap <F4> <C-R>=strftime("==== %m/%d/%Y ====\n")<CR>
 

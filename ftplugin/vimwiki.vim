@@ -407,6 +407,9 @@ nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
 " Danh Mod
 " short forms for latex formatting and math elements. {{{
 " taken from auctex.vim or miktexmacros.vim
+
+" Insert emphasis DIV
+call IMAP ('DIV', '<div class="emphasis"><++></div><++>', '')
 call IMAP ('__', '_{<++>}<++>', '')
 call IMAP ('()', '(<++>)<++>', '')
 call IMAP ('[]', '[<++>]<++>', '')

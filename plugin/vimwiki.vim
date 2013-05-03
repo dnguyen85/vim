@@ -71,6 +71,7 @@ function! s:setup_filetype() "{{{
       return
     endif
 
+  set filetype=tex
   set filetype=vimwiki
 endfunction "}}}
 

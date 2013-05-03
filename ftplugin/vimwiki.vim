@@ -410,6 +410,10 @@ nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
 
 " Insert emphasis DIV
 call IMAP ('DIV', '<div class="emphasis"><++></div><++>', '')
+call IMAP ('=>', '$\Rightarrow$', '')
+call IMAP ('->', '$\rightarrow$', '')
+" Align environment
+call IMAP ('ALI', "\\begin{align*}\<cr><++>\<cr>\\end{align*}", '') 
 call IMAP ('__', '_{<++>}<++>', '')
 call IMAP ('()', '(<++>)<++>', '')
 call IMAP ('[]', '[<++>]<++>', '')
@@ -421,13 +425,19 @@ call IMAP ('||', '|<++>|<++>', '')
 call IMAP ('~~', '&\approx& ', '')
 call IMAP ('=~', '\approx', '')
 " call IMAP ('::', '\dots', '') -- commented out for C++ namespace programming
-call IMAP ('\(', '\left( <++> \right)<++>', '')
-call IMAP ('\[', '\left[ <++> \right]<++>', '')
+call IMAP ('\\(', '\left( <++> \right)<++>', '')
+call IMAP ('\\[', '\left[ <++> \right]<++>', '')
 call IMAP ('\\{', '\left\{ <++> \right\}<++>', '')
+call IMAP ('\\|', '\left\| <++> \right\|<++>', '')
+call IMAP ('\\<', '\langle <++> \rangle<++>', '')
 call IMAP ('\{', '\{ <++> \}<++>', '')
+call IMAP ('\|', '\left| <++> \right|<++>', '')
 
 " \preformatted text
 call IMAP (g:mapleader.'{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
+
+" Math map
+call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$\<cr><++>", '')
 
 " Leader maps
 call IMAP (g:mapleader.'^', '\hat{<++>}<++>', '')
@@ -462,6 +472,8 @@ call IMAP (g:mapleader.'I', "\\int_{<++>}^{<++>}<++>", '')
 call IMAP (g:mapleader.'BF', "\\mathbf{<++>}<++>", '')
 " \mathbb
 call IMAP (g:mapleader.'BB', "\\mathbb{<++>}<++>", '')
+" \mathcal
+call IMAP (g:mapleader.'CA', "\\mathcal{<++>}<++>", '')
 " \text
 call IMAP (g:mapleader.'TE', "\\text{<++>}<++>", '')
 " \textbf

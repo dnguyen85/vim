@@ -212,6 +212,8 @@ let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -synctex=1 -src-specials -in
 "let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
 let g:Tex_Leader = ','
 let g:Tex_GotoError=0
+" Use symbol math
+let g:Tex_UseUtfMenus = 1
 
 function! SyncTexForward()
 let s:syncfile = fnamemodify(fnameescape(Tex_GetMainFileName()), ":r").".pdf"

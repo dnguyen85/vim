@@ -220,13 +220,14 @@ let s:syncfile = fnamemodify(fnameescape(Tex_GetMainFileName()), ":r").".pdf"
 let execstr = "silent !okular --unique ".s:syncfile."\\#src:".line(".").expand("%\:p").' &'
 exec execstr
 endfunction
-nnoremap <Leader>lf :call SyncTexForward()<CR>
+nnoremap <leader>lf :call SyncTexForward()<CR>
 
 " Latex paragraph map
 omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
-" Latex jump forward map
-imap JJ <Plug>IMAP_JumpForward
+" Latex jump forward map   
+imap ;; <Plug>IMAP_JumpForward
+
 
 " Spell checking
 " map <F10> :setlocal spell!<CR>
@@ -269,12 +270,12 @@ map <leader>wll :Vimwiki2HTMLBrowse<CR><CR>
 map <leader>lo :lopen<CR>
 map <leader>ln :lnext<CR>
 
-" Map <F6> to insert images string in insert mode
-inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
-" Map <F5> to insert time stamp in insert mode
-inoremap <F5> <C-R>=strftime("(%H:%M) ")<CR>
+" Map <F3> to insert time stamp in insert mode
+inoremap <F3> <C-R>=strftime("(%H:%M) ")<CR>
 " Map <F4> to insert Date stamp in insert mode
 inoremap <F4> <C-R>=strftime("==== %m/%d/%Y ====\n")<CR>
+" Map <F6> to insert images string in insert mode
+inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
 
 " Use mouse in terminal vim
 set mouse=a

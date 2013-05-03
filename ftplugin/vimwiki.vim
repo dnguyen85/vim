@@ -434,7 +434,7 @@ call IMAP ('\{', '\{ <++> \}<++>', '')
 call IMAP ('\|', '\left| <++> \right|<++>', '')
 
 " \preformatted text
-call IMAP (g:mapleader.'{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
+call IMAP ('{{{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
 
 " Math map
 call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$\<cr><++>", '')

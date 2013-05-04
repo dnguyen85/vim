@@ -17,6 +17,8 @@ let b:undo_ftplugin = "setlocal ".
       \ "foldmethod< foldexpr< commentstring< "
 " UNDO }}}
 
+filetype indent off
+
 " MISC STUFF {{{
 
 setlocal autowriteall
@@ -425,13 +427,13 @@ call IMAP ('||', '|<++>|<++>', '')
 call IMAP ('~~', '&\approx& ', '')
 call IMAP ('=~', '\approx', '')
 " call IMAP ('::', '\dots', '') -- commented out for C++ namespace programming
-call IMAP ('\\(', '\left( <++> \right)<++>', '')
-call IMAP ('\\[', '\left[ <++> \right]<++>', '')
-call IMAP ('\\{', '\left\{ <++> \right\}<++>', '')
-call IMAP ('\\|', '\left\| <++> \right\|<++>', '')
-call IMAP ('\\<', '\langle <++> \rangle<++>', '')
+call IMAP (g:mapleader.'(', '\left( <++> \right)<++>', '')
+call IMAP (g:mapleader.'[', '\left[ <++> \right]<++>', '')
+call IMAP (g:mapleader.'{', '\left\{ <++> \right\}<++>', '')
+call IMAP (g:mapleader.'<', '\langle <++> \rangle<++>', '')
 call IMAP ('\{', '\{ <++> \}<++>', '')
-call IMAP ('\|', '\left| <++> \right|<++>', '')
+call IMAP (g:mapleader.'|', '\left| <++> \right|<++>', '')
+call IMAP (g:mapleader.',|', '\left\| <++> \right\|<++>', '')
 
 " \preformatted text
 call IMAP ('{{{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
@@ -460,12 +462,12 @@ call IMAP (g:mapleader.'(', '\subset', '')
 call IMAP (g:mapleader.')', '\supset', '')
 call IMAP (g:mapleader.'<', '\le', '')
 call IMAP (g:mapleader.'>', '\ge', '')
-call IMAP (g:mapleader.',', '\nonumber', '')
+"call IMAP (g:mapleader.',', '\nonumber', '')   Disabled
 call IMAP (g:mapleader.'~', '\tilde{<++>}<++>', '')
 call IMAP (g:mapleader.';', '\dot{<++>}<++>', '')
 call IMAP (g:mapleader.':', '\ddot{<++>}<++>', '')
 call IMAP (g:mapleader.'2', '\sqrt{<++>}<++>', '')
-call IMAP (g:mapleader.'|', '\Big|', '')
+" call IMAP (g:mapleader.'|', '\Big|', '')      Disabled
 call IMAP (g:mapleader.'I', "\\int_{<++>}^{<++>}<++>", '')
 " Danh's Macro
 " \mathbf

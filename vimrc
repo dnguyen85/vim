@@ -1,6 +1,7 @@
 set background=dark
-set nocompatible
 colorscheme ir_black
+
+set nocompatible
 " syntax enable
 syntax on
 
@@ -32,9 +33,6 @@ call pathogen#helptags()
 "set guifont=Terminus\ 8
 set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 " set guifont=Ubuntu\ Mono\ 11
-
-" Set window size
-set lines=40 columns=140
 
 " Tabs are 4 spaces
 set tabstop=4
@@ -124,9 +122,6 @@ let mapleader = ","
 
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
-map <C-Q> :Bclose<CR>
-map <C-N> :bn<CR>
-map <C-P> :bp<CR>
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapAltNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1

@@ -1,6 +1,11 @@
 set background=dark
 colorscheme ir_black
 
+" minibufexplorer
+map <C-Q> :Bclose<CR>
+map <C-N> :bn<CR>
+map <C-P> :bp<CR>
+
 set nocompatible
 " syntax enable
 syntax on

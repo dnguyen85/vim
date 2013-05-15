@@ -1,5 +1,10 @@
+" Pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
 set background=dark
-colorscheme ir_black
+colorscheme solarized
+"colorscheme ir_black
 
 " minibufexplorer
 map <C-Q> :Bclose<CR>
@@ -29,10 +34,6 @@ map Z zO
 
 " Map changing directory to current file location
 map <F2> :lcd %:p:h<CR>
-
-" Pathogen
-call pathogen#infect()
-call pathogen#helptags()
 
 " Set font
 "set guifont=Terminus\ 8

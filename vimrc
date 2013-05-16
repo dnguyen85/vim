@@ -6,11 +6,6 @@ set background=dark
 colorscheme solarized
 "colorscheme ir_black
 
-" minibufexplorer
-map <C-Q> :Bclose<CR>
-map <C-N> :bn<CR>
-map <C-P> :bp<CR>
-
 set nocompatible
 " syntax enable
 syntax on
@@ -125,17 +120,25 @@ vnoremap <C-C> "+y
 
 " Map leader
 let mapleader = ","
-
+  
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapAltNavVim = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplTabWrap = 1
-hi link MBEVisibleChanged StatusLine
-hi link MBEVisibleNormal  StatusLine
-hi link MBENormal         Folded
-hi link MBEChanged        Error 
+"hi link MBEVisibleChanged StatusLine
+"hi link MBEVisibleNormal  StatusLine
+"hi link MBENormal         Folded
+"hi link MBEChanged        Error 
+
+" MiniBufExpl Colors
+hi MBEVisibleActive guifg=#A6DB29 guibg=fg
+hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
+hi MBEVisibleChanged guifg=#F1266F guibg=fg
+hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
+hi MBEChanged guifg=#CD5907 guibg=fg
+hi MBENormal guifg=#808080 guibg=fg
 
 " EnhancedCommentify plugin
 let g:EnhCommentifyRespectIndent = 'yes'
@@ -276,5 +279,16 @@ inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
 
 " Use mouse in terminal vim
 set mouse=a
+
+
+if has("gui_running")
+    " Set window size
+    set lines=40 columns=140
+    
+    " minibufexplorer
+    map <C-Q> :Bclose<CR>
+    map <C-N> :bn<CR>
+    map <C-P> :bp<CR>
+endif
 
 

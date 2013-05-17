@@ -440,7 +440,7 @@ call IMAP ('{{{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
 
 " Math map
 call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$\<cr><++>", '')
-call IMAP ('.c', '\cdot', '')
+call IMAP (g:mapleader.',.', '\cdot', '')
 call IMAP (g:mapleader.', ', '\qquad ', '')
 
 " Leader maps

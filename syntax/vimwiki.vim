@@ -187,10 +187,12 @@ hi def link VimwikiItalicBoldT VimwikiBoldItalic
 
 hi def VimwikiUnderline gui=underline
 
-hi def link VimwikiCode PreProc
+"hi def link VimwikiCode PreProc
+hi def link VimwikiCode Identifier
 hi def link VimwikiCodeT VimwikiCode
 
-hi def link VimwikiPre PreProc
+"hi def link VimwikiPre PreProc
+hi def link VimwikiPre Identifier
 hi def link VimwikiPreT VimwikiPre
 
 hi def link VimwikiNoExistsLink SpellBad

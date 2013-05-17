@@ -248,12 +248,12 @@ let g:vimwiki_use_mouse = 1
 let g:vimwiki_browsers=['google-chrome']
 " Do not let WikiWord to be a link
 let g:vimwiki_camel_case = 0
-hi VimwikiHeader1 guifg=#B40404
-hi VimwikiHeader2 guifg=#00FF00
-hi VimwikiHeader3 guifg=#0000FF
-hi VimwikiHeader4 guifg=#FF0040
-hi VimwikiHeader5 guifg=#00FFFF
-hi VimwikiHeader6 guifg=#FFFF00
+hi VimwikiHeader1 guifg=#FDF6E3
+hi VimwikiHeader2 guifg=#CB4B16
+hi VimwikiHeader3 guifg=#2AA198
+hi VimwikiHeader4 guifg=#B58900
+hi VimwikiHeader5 guifg=#268BD2
+hi VimwikiHeader6 guifg=#FDF6E3
 let g:vimwiki_hl_headers = 1
 let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
                      \ 'path_html': '~/Dropbox/www/wiki', 

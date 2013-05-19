@@ -289,6 +289,10 @@ if has("gui_running")
     map <C-Q> :Bclose<CR>
     map <C-N> :bn<CR>
     map <C-P> :bp<CR>
+else
+    " VIM only, no GVIM
+    " Detect file change
+    au FileChangedShell * echo "Warning: File changed on disk"
 endif
 
 

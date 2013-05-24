@@ -48,6 +48,13 @@ endif
 function! Tex_MathBF()
 	return "\<Left>\\mathbf{\<Right>}"
 endfunction " }}}
+
+" Tex_MathRM: encloses te previous letter/number in \mathrm{} {{{
+" Description: 
+function! Tex_MathRM()
+	return "\<Left>\\mathrm{\<Right>}"
+endfunction " }}}
+
 " Tex_MathCal: enclose the previous letter/number in \mathcal {{{
 " Description:
 " 	if the last character is not a letter/number, then insert \cite{}
@@ -116,9 +123,11 @@ endfunction " }}}
 
 " Provide <plug>'d mapping for easy user customization. {{{
 inoremap <silent> <Plug>Tex_MathBF      <C-r>=Tex_MathBF()<CR>
+inoremap <silent> <Plug>Tex_MathRM      <C-r>=Tex_MathRM()<CR>
 inoremap <silent> <Plug>Tex_MathCal     <C-r>=Tex_MathCal()<CR>
 inoremap <silent> <Plug>Tex_LeftRight   <C-r>=Tex_LeftRight()<CR>
 vnoremap <silent> <Plug>Tex_MathBF		<C-C>`>a}<Esc>`<i\mathbf{<Esc>
+vnoremap <silent> <Plug>Tex_MathRM		<C-C>`>a}<Esc>`<i\mathrm{<Esc>
 vnoremap <silent> <Plug>Tex_MathCal		<C-C>`>a}<Esc>`<i\mathcal{<Esc>
 nnoremap <silent> <Plug>Tex_LeftRight	:call Tex_PutLeftRight()<CR>
 
@@ -127,9 +136,11 @@ nnoremap <silent> <Plug>Tex_LeftRight	:call Tex_PutLeftRight()<CR>
 function! <SID>Tex_SetBracketingMaps()
 
 	call Tex_MakeMap('<M-b>', '<Plug>Tex_MathBF', 'i', '<buffer> <silent>')
+	call Tex_MakeMap('<M-m>', '<Plug>Tex_MathRM', 'i', '<buffer> <silent>')
 	call Tex_MakeMap('<M-c>', '<Plug>Tex_MathCal', 'i', '<buffer> <silent>')
 	call Tex_MakeMap('<M-l>', '<Plug>Tex_LeftRight', 'i', '<buffer> <silent>')
 	call Tex_MakeMap('<M-b>', '<Plug>Tex_MathBF', 'v', '<buffer> <silent>')
+	call Tex_MakeMap('<M-m>', '<Plug>Tex_MathRM', 'v', '<buffer> <silent>')
 	call Tex_MakeMap('<M-c>', '<Plug>Tex_MathCal', 'v', '<buffer> <silent>')
 	call Tex_MakeMap('<M-l>', '<Plug>Tex_LeftRight', 'n', '<buffer> <silent>')
 

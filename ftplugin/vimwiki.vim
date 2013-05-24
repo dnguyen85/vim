@@ -440,8 +440,9 @@ call IMAP ('{{{{', "{{{class=\"brush: <++>\"\<cr><++>\<cr>}}}<++>", '')
 
 " Math map
 call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$\<cr><++>", '')
-call IMAP (g:mapleader.',.', '\cdot', '')
 call IMAP (g:mapleader.', ', '\qquad ', '')
+call IMAP (g:mapleader.',/', '\over ', '')
+call IMAP (g:mapleader.'o', '\cdot', '')
 
 " Leader maps
 call IMAP (g:mapleader.'^', '\hat{<++>}<++>', '')
@@ -473,6 +474,8 @@ call IMAP (g:mapleader.'I', "\\int_{<++>}^{<++>}<++>", '')
 " Danh's Macro
 " \mathbf
 call IMAP (g:mapleader.'BF', "\\mathbf{<++>}<++>", '')
+" \mathrm
+call IMAP (g:mapleader.'RM', "\\mathrm{<++>}<++>", '')
 " \mathbb
 call IMAP (g:mapleader.'BB', "\\mathbb{<++>}<++>", '')
 " \mathcal

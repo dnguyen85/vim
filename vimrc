@@ -7,7 +7,7 @@ colorscheme solarized
 "colorscheme ir_black
 
 set nocompatible
-" syntax enable
+syntax enable
 syntax on
 
 filetype plugin on
@@ -22,6 +22,20 @@ set smartcase
 " Set folding
 " set foldmethod=syntax
 
+if has("gui_running")
+    " Set window size
+    set lines=40 columns=140
+    
+    " minibufexplorer
+    map <C-Q> :Bclose<CR>
+    map <C-N> :bn<CR>
+    map <C-P> :bp<CR>
+else
+    " VIM only, no GVIM
+    " Detect file change
+    au FileChangedShell * echo "Warning: File changed on disk"
+endif
+
 " set foldlevelstart=1
 " Space to toggle folds
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
@@ -32,7 +46,8 @@ map <F2> :lcd %:p:h<CR>
 
 " Set font
 "set guifont=Terminus\ 8
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+set guifont=Deja\ Vu\ Sans\ Mono\ 9
+" set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 " set guifont=Ubuntu\ Mono\ 11
 
 " Tabs are 4 spaces
@@ -79,8 +94,6 @@ imap jj <Esc>
 " Save history options?
 set viminfo='20,"500
 
-" map <F6> :set foldmethod=syntax<CR>
-
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -123,14 +136,18 @@ let mapleader = ","
   
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapAltNavVim = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
+" let g:miniBufExplMapWindowNavVim = 1 " Obsolete
+" let g:miniBufExplMapAltNavVim = 1    " Obsolete
+" let g:miniBufExplMapCTabSwitchBufs = 1 " Obsolete
 let g:miniBufExplTabWrap = 1
+let g:miniBufExplForceSyntaxEnable = 1
 "hi link MBEVisibleChanged StatusLine
 "hi link MBEVisibleNormal  StatusLine
 "hi link MBENormal         Folded
 "hi link MBEChanged        Error 
+" New mappings for MBE 
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
@@ -174,9 +191,18 @@ let g:EclimTaglistEnable = 0
 set wildmode=longest,list
 
 " Map windows switching to ww
-map W <C-w>
-map F <C-f>
-map B <C-b>
+" Do not use bash ctrl-ja
+let g:BASH_Ctrl_j='off'
+let g:C_Ctrl_j='off'
+noremap W <C-W>
+noremap F <C-F>
+noremap B <C-B>
+noremap <C-J>     <C-W>j
+noremap <C-K>     <C-W>k
+noremap <C-H>     <C-W>h
+noremap <C-L>     <C-W>l
+
+
 
 " C-F1, C-F2, C-F3 to toggle menu bar, tool bar, and scroll bar, default to hidden
 set guioptions-=m " remove menu bar
@@ -280,19 +306,5 @@ inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
 " Use mouse in terminal vim
 set mouse=a
 
-
-if has("gui_running")
-    " Set window size
-    set lines=40 columns=140
-    
-    " minibufexplorer
-    map <C-Q> :Bclose<CR>
-    map <C-N> :bn<CR>
-    map <C-P> :bp<CR>
-else
-    " VIM only, no GVIM
-    " Detect file change
-    au FileChangedShell * echo "Warning: File changed on disk"
-endif
 
 

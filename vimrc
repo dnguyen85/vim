@@ -136,26 +136,26 @@ let mapleader = ","
   
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
-" let g:miniBufExplMapWindowNavVim = 1 " Obsolete
-" let g:miniBufExplMapAltNavVim = 1    " Obsolete
-" let g:miniBufExplMapCTabSwitchBufs = 1 " Obsolete
+let g:miniBufExplMapWindowNavVim = 1 " Obsolete
+let g:miniBufExplMapAltNavVim = 1    " Obsolete
+"let g:miniBufExplMapCTabSwitchBufs = 1 " Obsolete
 let g:miniBufExplTabWrap = 1
 let g:miniBufExplForceSyntaxEnable = 1
-"hi link MBEVisibleChanged StatusLine
-"hi link MBEVisibleNormal  StatusLine
-"hi link MBENormal         Folded
-"hi link MBEChanged        Error 
-" New mappings for MBE 
-noremap <C-TAB>   :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
+hi link MBEVisibleChanged StatusLine
+hi link MBEVisibleNormal  StatusLine
+hi link MBENormal         Folded
+hi link MBEChanged        Error 
+"New mappings for MBE (submodule, obsolete)
+noremap <C-TAB>   :bn<CR>
+noremap <C-S-TAB> :bp<CR>
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
 hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
-hi MBEVisibleChanged guifg=#F1266F guibg=fg
-hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
-hi MBEChanged guifg=#CD5907 guibg=fg
-hi MBENormal guifg=#808080 guibg=fg
+"hi MBEVisibleChanged guifg=#F1266F guibg=fg
+"hi MBEVisibleNormal guifg=#5DC2D6 guibg=fg
+"hi MBEChanged guifg=#CD5907 guibg=fg
+"hi MBENormal guifg=#808080 guibg=fg
 
 " EnhancedCommentify plugin
 let g:EnhCommentifyRespectIndent = 'yes'
@@ -249,7 +249,7 @@ endfunction
 nnoremap <leader>lf :call SyncTexForward()<CR>
 
 " Latex paragraph map
-omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
+omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.
 
 " Latex jump forward map   
 " imap ;; <Plug>IMAP_JumpForward

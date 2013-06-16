@@ -136,9 +136,9 @@ let mapleader = ","
   
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
-" let g:miniBufExplMapWindowNavVim = 1 " Obsolete
-" let g:miniBufExplMapAltNavVim = 1    " Obsolete
-" let g:miniBufExplMapCTabSwitchBufs = 1 " Obsolete
+let g:miniBufExplMapWindowNavVim = 1 " Obsolete
+let g:miniBufExplMapAltNavVim = 1    " Obsolete
+let g:miniBufExplMapCTabSwitchBufs = 1 " Obsolete
 let g:miniBufExplTabWrap = 1
 let g:miniBufExplForceSyntaxEnable = 1
 "hi link MBEVisibleChanged StatusLine
@@ -146,8 +146,8 @@ let g:miniBufExplForceSyntaxEnable = 1
 "hi link MBENormal         Folded
 "hi link MBEChanged        Error 
 " New mappings for MBE 
-noremap <C-TAB>   :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
+noremap <C-TAB>   :bn<CR>
+noremap <C-S-TAB> :bp<CR>
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg

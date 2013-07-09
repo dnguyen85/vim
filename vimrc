@@ -46,8 +46,8 @@ map <F2> :lcd %:p:h<CR>
 
 " Set font
 "set guifont=Terminus\ 8
-set guifont=Deja\ Vu\ Sans\ Mono\ 9
-" set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
+"set guifont=Deja\ Vu\ Sans\ Mono\ 9  -- This has a bug with italics being cut off
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 " set guifont=Ubuntu\ Mono\ 11
 
 " Tabs are 4 spaces

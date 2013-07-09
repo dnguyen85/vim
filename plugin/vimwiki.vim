@@ -444,3 +444,5 @@ endif
 "}}}
 
 let &cpo = s:old_cpo
+let g:Tex_SmartKeyQuote = 0
+let g:Tex_SmartKeyDot = 0

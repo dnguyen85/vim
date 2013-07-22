@@ -148,6 +148,10 @@ let g:miniBufExplForceSyntaxEnable = 1
 " New mappings for MBE 
 noremap <C-TAB>   :bn<CR>
 noremap <C-S-TAB> :bp<CR>
+" Command mappings
+command MBEbd bd
+command MBEbw bw
+command MBEbun bu
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
@@ -305,6 +309,5 @@ inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
 
 " Use mouse in terminal vim
 set mouse=a
-
 
 

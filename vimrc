@@ -25,11 +25,8 @@ set smartcase
 if has("gui_running")
     " Set window size
     set lines=40 columns=140
-    
-    " minibufexplorer
-    map <C-Q> :Bclose<CR>
-    map <C-N> :bn<CR>
-    map <C-P> :bp<CR>
+   
+
 else
     " VIM only, no GVIM
     " Detect file change
@@ -148,10 +145,8 @@ let g:miniBufExplForceSyntaxEnable = 1
 " New mappings for MBE 
 noremap <C-TAB>   :bn<CR>
 noremap <C-S-TAB> :bp<CR>
+noremap <C-Q>     :MBEbd<CR>
 " Command mappings
-command MBEbd bd
-command MBEbw bw
-command MBEbun bu
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg

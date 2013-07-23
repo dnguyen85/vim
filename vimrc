@@ -169,16 +169,14 @@ let g:EnhCommentifyUseAltKeys = 'yes'
 let g:proj_flags="imstvg"
 let g:proj_window_width = 30
 
-" Taglist plugin maps
-let Tlist_Ctags_Cmd='/usr/bin/ctags'
-nnoremap <silent> <F11> :TlistToggle<CR> 
-"map T :TlistToggle<CR>
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Enable_Fold_Column = 0 " No Fold Column
-let Tlist_Sort_Type = "name" " Sort tags by name
-let Tlist_WinWidth = 25
-let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
-let g:tlist_tex_settings = 'latex;s:sections;g:graphics;l:labels;r:refs;p:page refs;b:bibitems'
+" Taglist/Tagbar plugin maps
+nnoremap <silent> <F11> :TagbarToggle<CR> 
+let g:tagbar_left = 1
+let g:tagbar_width = 30
+let g:tagbar_indent = 1
+let g:tagbar_autoshowtag = 1
+"let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
+"let g:tlist_tex_settings = 'latex;s:sections;g:graphics;l:labels;r:refs;p:page refs;b:bibitems'
 
 " SuperTab plugin
 let g:SuperTabDefaultCompletionType = "<c-X><c-U>"

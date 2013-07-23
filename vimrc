@@ -147,7 +147,7 @@ noremap <C-TAB>   :bn<CR>
 noremap <C-S-TAB> :bp<CR>
 noremap <C-Q>     :MBEbd<CR>
 " Command mappings
-cnoreabbrev bd MBEbd
+cnoreabbrev b MBEbd
 cnoreabbrev bw MBEbw
 cnoreabbrev bu MBEbun
 

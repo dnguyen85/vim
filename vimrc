@@ -147,6 +147,9 @@ noremap <C-TAB>   :bn<CR>
 noremap <C-S-TAB> :bp<CR>
 noremap <C-Q>     :MBEbd<CR>
 " Command mappings
+cnoreabbrev bd MBEbd
+cnoreabbrev bw MBEbw
+cnoreabbrev bu MBEbun
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg

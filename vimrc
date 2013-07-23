@@ -147,9 +147,9 @@ noremap <C-TAB>   :bn<CR>
 noremap <C-S-TAB> :bp<CR>
 noremap <C-Q>     :MBEbd<CR>
 " Command mappings
-cnoreabbrev b MBEbd
-cnoreabbrev bw MBEbw
-cnoreabbrev bu MBEbun
+cnoreabbrev BD MBEbd
+cnoreabbrev BW MBEbw
+cnoreabbrev BU MBEbun
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
@@ -171,12 +171,17 @@ let g:proj_window_width = 30
 
 " Taglist/Tagbar plugin maps
 nnoremap <silent> <F11> :TagbarToggle<CR> 
-let g:tagbar_left = 1
-let g:tagbar_width = 30
+"let g:tagbar_left = 1
+"let g:tagbar_width = 30
 let g:tagbar_indent = 1
 let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
 "let g:tlist_tex_settings = 'latex;s:sections;g:graphics;l:labels;r:refs;p:page refs;b:bibitems'
+
+" Fugitive plugin
+cnoreabbrev Gs Gstatus
+" Mapping of navigating from blob or tree buffers
+nnoremap << :edit %:h<CR> 
 
 " SuperTab plugin
 let g:SuperTabDefaultCompletionType = "<c-X><c-U>"

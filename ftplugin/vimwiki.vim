@@ -443,6 +443,7 @@ call IMAP (g:mapleader.'$$', "$$\<cr><++>\<cr>$$\<cr><++>", '')
 call IMAP (g:mapleader.', ', '\qquad ', '')
 call IMAP (g:mapleader.',/', '\over ', '')
 call IMAP (g:mapleader.'o', '\cdot', '')
+call IMAP (g:mapleader.',o', '\cdots', '')
 
 " Leader maps
 call IMAP (g:mapleader.'^', '\hat{<++>}<++>', '')

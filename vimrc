@@ -151,6 +151,11 @@ cnoreabbrev BD MBEbd
 cnoreabbrev BW MBEbw
 cnoreabbrev BU MBEbun
 
+" Command-T plugin
+let g:CommandTMaxFiles = 100000
+let g:CommandTMaxDepth = 100
+let g:CommandTMaxCachedDirectories = 0
+
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg
 hi MBEVisibleChangedActive guifg=#F1266F guibg=fg
@@ -297,6 +302,7 @@ map <leader>wb :VimwikiAll2HTML<CR><CR>
 " Remap convert page and open link
 map <leader>wl :Vimwiki2HTML<CR><CR>
 map <leader>wll :Vimwiki2HTMLBrowse<CR><CR>
+map <leader>wc :cd /home/dhn24/Dropbox/www/wiki_files<CR>
 " Set the open search list shortcut
 map <leader>lo :lopen<CR>
 map <leader>ln :lnext<CR>

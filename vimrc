@@ -37,7 +37,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 map Z zO
 
 " Map changing directory to current file location
-map <F10> :lcd %:p:h<CR>
+map <F2> :lcd %:p:h<CR>
 
 " Set font
 "set guifont=Terminus\ 8

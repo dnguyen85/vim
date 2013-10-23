@@ -80,8 +80,8 @@ imap <S-Tab> <Esc><<i
 set printoptions=number:y
 
 " Run Make with F5/F6
-map <F5> :make<CR>
-map <F6> :make test<CR>
+" map <F5> :make<CR>
+" map <F6> :make test<CR>
 
 " Typing jj quickly escapes out of INSERT mode
 imap jj <Esc>
@@ -167,6 +167,7 @@ let g:EnhCommentifyRespectIndent = 'yes'
 let g:EnhCommentifyPretty = 'yes'
 let g:EnhCommentifyAlignRight = 'yes'
 let g:EnhCommentifyUseAltKeys = 'yes'
+let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Project plugin flags
 let g:proj_flags="imstvg"

@@ -412,6 +412,7 @@ nnoremap <silent><buffer> - :call vimwiki#base#RemoveHeaderLevel()<CR>
 
 " Insert emphasis DIV
 call IMAP ('DIV', '<div class="emphasis"><++></div><++>', '')
+call IMAP ('HIG', '<div class="highlight"><++></div><++>', '')
 call IMAP ('=>', '$\Rightarrow$', '')
 call IMAP ('-->', '$\rightarrow$', '')
 " Align environment

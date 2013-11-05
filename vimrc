@@ -149,10 +149,12 @@ cnoreabbrev BD MBEbd
 cnoreabbrev BW MBEbw
 cnoreabbrev BU MBEbun
 
-" Command-T plugin
-let g:CommandTMaxFiles = 100000
-let g:CommandTMaxDepth = 100
-let g:CommandTMaxCachedDirectories = 0
+" CtrlP plugin
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " MiniBufExpl Colors
 hi MBEVisibleActive guifg=#A6DB29 guibg=fg

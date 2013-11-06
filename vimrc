@@ -150,10 +150,13 @@ cnoreabbrev BW MBEbw
 cnoreabbrev BU MBEbun
 
 " CtrlP plugin
+let g:ctrlp_map= '<leader>t'
 " Try to reuse window elsewhere for opened files
 let g:ctrlp_switch_buffer = 'Et'
 " CWD for CtrlP: git dir, or current dir, or current file dir if current dir is not ancestor
 let g:ctrlp_working_path_mode = 'ra' 
+" Use Caching
+let g:ctrlp_use_caching = 1
 " Set ignored folders
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip\time,*/.git/*,*/.hg/*,*/.svn/*  
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'

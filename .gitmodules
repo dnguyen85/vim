@@ -19,3 +19,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/vim-latex"]
+	path = bundle/vim-latex
+	url = dhn24@dwsl.ece.drexel.edu:~/vim-latex

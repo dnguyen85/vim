@@ -151,6 +151,7 @@ cnoreabbrev BU MBEbun
 
 " CtrlP plugin
 " let g:ctrlp_map= '<leader>t'
+nnoremap <leader>t :CtrlPTag<CR>
 " Try to reuse window elsewhere for opened files
 let g:ctrlp_switch_buffer = 'Et'
 " CWD for CtrlP: git dir, or current dir, or current file dir if current dir is not ancestor
@@ -163,18 +164,18 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_extensions = ['tag']
 
 " Hide the status bar for ctrlp
-"let g:ctrlp_buffer_func = {
-"    \ 'enter': 'Function_Name_1',
-"    \ 'exit':  'Function_Name_2',
-"    \ }
+let g:ctrlp_buffer_func = {
+    \ 'enter': 'Function_Name_1',
+    \ 'exit':  'Function_Name_2',
+    \ }
 
-"func! Function_Name_1()
-"    set laststatus=0
-"endfunc
+func! Function_Name_1()
+    set laststatus=0
+endfunc
 
-"func! Function_Name_2()
-"    set laststatus=2
-"endfunc
+func! Function_Name_2()
+    set laststatus=2
+endfunc
 
 " End CtrlP plugin 
 

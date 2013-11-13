@@ -334,9 +334,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
                      \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}}]
 " Remap find previous link on current page
 map <leader>wb :VimwikiAll2HTML<CR><CR>
-" Remap convert page and open link
-map <leader>wl :Vimwiki2HTML<CR><CR>
-map <leader>wll :Vimwiki2HTMLBrowse<CR><CR>
+" Remap convert page and open link (Note: this has been moved to inside vimwiki plugin
 map <leader>wc :cd /home/dhn24/Dropbox/www/wiki_files<CR>
 " Set the open search list shortcut
 map <leader>lo :lopen<CR>

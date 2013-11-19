@@ -84,7 +84,7 @@ set printoptions=number:y
 " map <F6> :make test<CR>
 
 " Typing jj quickly escapes out of INSERT mode
-imap jj <Esc>
+imap jk <Esc>
 
 " Save history options?
 set viminfo='20,"500

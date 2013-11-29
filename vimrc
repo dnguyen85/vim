@@ -72,8 +72,8 @@ set nu
 set scrolloff=3
 
 " Set Shift-Tab to reverse Tab
-nmap <S-Tab> <<
-imap <S-Tab> <Esc><<i
+" nmap <S-Tab> <<
+" imap <S-Tab> <Esc><<i
 
 " map <F12> :set nu!<CR>
 " highlight LineNr ctermfg=6 ctermbg=9
@@ -228,13 +228,12 @@ set wildmode=longest,list
 " Do not use bash ctrl-ja
 let g:BASH_Ctrl_j='off'
 let g:C_Ctrl_j='off'
-noremap W <C-W>
 noremap F <C-F>
 noremap B <C-B>
-noremap <C-J>     <C-W>j
-noremap <C-K>     <C-W>k
-noremap <C-H>     <C-W>h
-noremap <C-L>     <C-W>l
+noremap <C-J>     <C-W><C-J>
+noremap <C-K>     <C-W><C-K>
+noremap <C-H>     <C-W><C-H>
+noremap <C-L>     <C-W><C-L>
 
 
 

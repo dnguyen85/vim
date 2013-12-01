@@ -141,9 +141,9 @@ let g:miniBufExplForceSyntaxEnable = 1
 "hi link MBENormal         Folded
 "hi link MBEChanged        Error 
 " New mappings for MBE 
-noremap <C-TAB>   :bn<CR>
-noremap <C-S-TAB> :bp<CR>
-noremap <C-Q>     :MBEbd<CR>
+nnoremap <C-TAB>   :bn<CR>
+nnoremap <C-S-TAB> :bp<CR>
+nnoremap <C-Q>     :MBEbd<CR>
 " Command mappings
 cnoreabbrev BD MBEbd
 cnoreabbrev BW MBEbw
@@ -225,17 +225,15 @@ let g:EclimTaglistEnable = 0
 set wildmode=longest,list
 
 " Map windows switching to ww
-" Do not use bash ctrl-ja
+" Do not use bash ctrl-j
 let g:BASH_Ctrl_j='off'
 let g:C_Ctrl_j='off'
-noremap F <C-F>
-noremap B <C-B>
-noremap <C-J>     <C-W><C-J>
-noremap <C-K>     <C-W><C-K>
-noremap <C-H>     <C-W><C-H>
-noremap <C-L>     <C-W><C-L>
-
-
+nnoremap F <C-F>
+nnoremap B <C-B>
+nnoremap <C-j>     <C-W>j
+nnoremap <C-k>     <C-W>k
+nnoremap <C-h>     <C-W>h
+nnoremap <C-l>     <C-W>l
 
 " C-F1, C-F2, C-F3 to toggle menu bar, tool bar, and scroll bar, default to hidden
 set guioptions-=m " remove menu bar

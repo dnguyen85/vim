@@ -143,7 +143,6 @@ let g:miniBufExplForceSyntaxEnable = 1
 " New mappings for MBE 
 nnoremap <C-TAB>   :bn<CR>
 nnoremap <C-S-TAB> :bp<CR>
-nnoremap <C-Q>     :MBEbd<CR>
 " Command mappings
 cnoreabbrev BD MBEbd
 cnoreabbrev BW MBEbw
@@ -343,7 +342,7 @@ inoremap <F3> <C-R>=strftime("(%H:%M) ")<CR>
 " Map <F4> to insert Date stamp in insert mode
 inoremap <F4> <C-R>=strftime("==== %m/%d/%Y ====\n")<CR>
 " Map <F6> to insert images string in insert mode
-inoremap <F6> <C-R>=strftime("images/%m_%d_%Y_img")<CR>
+inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
 
 " Use mouse in terminal vim
 set mouse=a

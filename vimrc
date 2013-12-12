@@ -344,6 +344,9 @@ inoremap <F4> <C-R>=strftime("==== %m/%d/%Y ====\n")<CR>
 " Map <F6> to insert images string in insert mode
 inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
 
+" Slime plugin
+let g:slime_target = "tmux"
+
 " Use mouse in terminal vim
 set mouse=a
 

@@ -31,3 +31,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vimwiki
+[submodule "bundle/vim-slime"]
+	path = bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git

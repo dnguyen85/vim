@@ -344,6 +344,12 @@ inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
 " Slime plugin
 let g:slime_target = "tmux"
 
+" NERD Tree plugin
+if has("autocmd")
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+endif
+map <F12> :NERDTreeToggle<CR>
+
 " Use mouse in terminal vim
 set mouse=a
 

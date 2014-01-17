@@ -149,7 +149,6 @@ cnoreabbrev BW MBEbw
 cnoreabbrev BU MBEbun
 
 " CtrlP plugin
-nnoremap <leader>t :CtrlPTag<CR>
 " Try to reuse window elsewhere for opened files
 let g:ctrlp_switch_buffer = 'Et'
 " CWD for CtrlP: git dir, or current dir, or current file dir if current dir is not ancestor
@@ -194,6 +193,7 @@ let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Taglist/Tagbar plugin maps
 nnoremap <silent> <F11> :TagbarToggle<CR> 
+nnoremap <silent> <leader>t :TagbarOpen fj<CR> 
 let g:tagbar_indent = 1
 let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'

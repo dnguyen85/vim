@@ -149,7 +149,6 @@ cnoreabbrev BW MBEbw
 cnoreabbrev BU MBEbun
 
 " CtrlP plugin
-nnoremap <leader>t :CtrlPTag<CR>
 " Try to reuse window elsewhere for opened files
 let g:ctrlp_switch_buffer = 'Et'
 " CWD for CtrlP: git dir, or current dir, or current file dir if current dir is not ancestor
@@ -189,11 +188,12 @@ hi MBENormal guifg=#808080 guibg=fg
 let g:EnhCommentifyRespectIndent = 'yes'
 let g:EnhCommentifyPretty = 'yes'
 let g:EnhCommentifyAlignRight = 'yes'
-let g:EnhCommentifyUseAltKeys = 'yes'
+let g:EnhCommentifyUseAltKeys = 'no'
 let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Taglist/Tagbar plugin maps
 nnoremap <silent> <F11> :TagbarToggle<CR> 
+nnoremap <silent> <leader>t :TagbarOpen fj<CR> 
 let g:tagbar_indent = 1
 let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
@@ -345,6 +345,8 @@ inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
 let g:slime_target = "tmux"
 
 " NERD Tree plugin
+let g:NERDTreeBookmarksFile = "/home/dhn24/Dropbox/Research/work_files/NERDTreeBookmarks"
+let g:NERDTreeShowBookmarks = 1
 if has("autocmd")
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 endif

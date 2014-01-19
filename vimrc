@@ -188,7 +188,7 @@ hi MBENormal guifg=#808080 guibg=fg
 let g:EnhCommentifyRespectIndent = 'yes'
 let g:EnhCommentifyPretty = 'yes'
 let g:EnhCommentifyAlignRight = 'yes'
-let g:EnhCommentifyUseAltKeys = 'yes'
+let g:EnhCommentifyUseAltKeys = 'no'
 let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Taglist/Tagbar plugin maps

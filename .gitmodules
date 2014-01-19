@@ -37,3 +37,9 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/vim-matlab-fold"]
+	path = bundle/vim-matlab-fold
+	url = git://github.com/djoshea/vim-matlab-fold.git
+[submodule "bundle/vim-matlab"]
+	path = bundle/vim-matlab
+	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vim-matlab

@@ -310,7 +310,7 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.
 let g:vimwiki_html_header_numbering_sym = '.'
 let g:vimwiki_html_header_numbering = 4
 let g:vimwiki_use_mouse = 1
-let g:vimwiki_browsers=['google-chrome']
+"let g:vimwiki_browsers=['firefox']
 " Do not let WikiWord to be a link
 let g:vimwiki_camel_case = 0
 hi VimwikiHeader1 guifg=#FDF6E3

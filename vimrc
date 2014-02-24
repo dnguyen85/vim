@@ -352,6 +352,11 @@ if has("autocmd")
 endif
 map <F12> :NERDTreeToggle<CR>
 
+" Splice to deactivate fugitive per: https://github.com/sjl/splice.vim/issues/13  
+if !exists("g:pathogen_disabled")
+    let g:pathogen_disabled = []
+endif
+
 " Use mouse in terminal vim
 set mouse=a
 

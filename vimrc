@@ -193,7 +193,6 @@ let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Taglist/Tagbar plugin maps
 nnoremap <silent> <F11> :TagbarToggle<CR> 
-nnoremap <silent> <leader>t :TagbarOpen fj<CR> 
 let g:tagbar_indent = 1
 let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
@@ -209,7 +208,7 @@ endif
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " SuperTab plugin
-let g:SuperTabDefaultCompletionType = "<c-X><c-U>"
+let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabMappingForward = '<S-CR>'
 let g:SuperTabMappingBackward = '<C-S-CR>'
 
@@ -352,10 +351,9 @@ if has("autocmd")
 endif
 map <F12> :NERDTreeToggle<CR>
 
-" Splice to deactivate fugitive per: https://github.com/sjl/splice.vim/issues/13  
-if !exists("g:pathogen_disabled")
-    let g:pathogen_disabled = []
-endif
+" TernJS Javascript plugin
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
 
 " Use mouse in terminal vim
 set mouse=a

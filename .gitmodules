@@ -46,9 +46,6 @@
 [submodule "bundle/vim-matlab"]
 	path = bundle/vim-matlab
 	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vim-matlab
-[submodule "bundle/splice"]
-	path = bundle/splice
-	url = https://github.com/sjl/splice.vim.git
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git

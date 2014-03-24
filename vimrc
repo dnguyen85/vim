@@ -6,7 +6,7 @@ set background=dark
 colorscheme solarized
 "colorscheme ir_black
 
-set nocompatible
+set nocompatible " Be iMproved, not compatible w/ vi
 syntax enable
 syntax on
 

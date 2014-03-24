@@ -355,6 +355,9 @@ map <F12> :NERDTreeToggle<CR>
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
+" Neocomlcache
+" let g:neocomplcache_enable_at_startup = 1
+
 " Use mouse in terminal vim
 set mouse=a
 

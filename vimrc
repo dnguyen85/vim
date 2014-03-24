@@ -41,9 +41,9 @@ map <F2> :lcd %:p:h<CR>
 
 " Set font
 "set guifont=Terminus\ 8
-"set guifont=Deja\ Vu\ Sans\ Mono\ 9  -- This has a bug with italics being cut off
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-" set guifont=Ubuntu\ Mono\ 11
+" -- This has a bug with italics being cut off
+set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 9  
+"set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 
 " Tabs are 4 spaces
 set tabstop=4
@@ -129,25 +129,6 @@ vnoremap <C-C> "+y
 " Map leader
 let mapleader = ","
   
-" MiniBufExplorer plugin
-" Map <C-Q> to close buffer
-let g:miniBufExplMapWindowNavVim = 1 " Obsolete
-let g:miniBufExplMapAltNavVim = 1    " Obsolete
-let g:miniBufExplMapCTabSwitchBufs = 1 " Obsolete
-let g:miniBufExplTabWrap = 1
-let g:miniBufExplForceSyntaxEnable = 1
-"hi link MBEVisibleChanged StatusLine
-"hi link MBEVisibleNormal  StatusLine
-"hi link MBENormal         Folded
-"hi link MBEChanged        Error 
-" New mappings for MBE 
-nnoremap <C-TAB>   :bn<CR>
-nnoremap <C-S-TAB> :bp<CR>
-" Command mappings
-cnoreabbrev BD MBEbd
-cnoreabbrev BW MBEbw
-cnoreabbrev BU MBEbun
-
 " CtrlP plugin
 " Try to reuse window elsewhere for opened files
 let g:ctrlp_switch_buffer = 'Et'
@@ -161,18 +142,18 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_extensions = ['tag']
 
 " Hide the status bar for ctrlp
-let g:ctrlp_buffer_func = {
-    \ 'enter': 'Function_Name_1',
-    \ 'exit':  'Function_Name_2',
-    \ }
+" let g:ctrlp_buffer_func = {
+"     \ 'enter': 'Function_Name_1',
+"     \ 'exit':  'Function_Name_2',
+"     \ }
 
-func! Function_Name_1()
-    set laststatus=0
-endfunc
+" func! Function_Name_1()
+"     set laststatus=0
+" endfunc
 
-func! Function_Name_2()
-    set laststatus=2
-endfunc
+" func! Function_Name_2()
+"     set laststatus=2
+" endfunc
 
 " End CtrlP plugin 
 
@@ -205,7 +186,8 @@ nnoremap << :edit %:h<CR>
 if has("autocmd")
     autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" Use fugitive statusline instead of vim-airline
+" set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " SuperTab plugin
 let g:SuperTabDefaultCompletionType = 'context'
@@ -357,6 +339,26 @@ let g:tern_show_argument_hints='on_hold'
 
 " Neocomlcache
 " let g:neocomplcache_enable_at_startup = 1
+
+"" vim-airline
+" Set this to enable airline by default
+" set laststatus=2
+" Use powerline font
+let g:airline_powerline_fonts = 1
+" Disable whitespace check
+let g:airline_detect_whitespace = 0
+" Enable tab line
+let g:airline#extensions#tabline#enabled = 1
+" Show the buffer number
+let g:airline#extensions#tabline#buffer_nr_show = 1
+" Eliminate the space between buffer number
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+" Set min buffers to start showing tabline
+let g:airline#extensions#tabline#buffer_min_count = 2
+" Use the `unique_tail` (or `unique_tail_improved` algorithm to display buffer
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+
 
 " Use mouse in terminal vim
 set mouse=a

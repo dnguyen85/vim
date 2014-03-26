@@ -42,7 +42,7 @@ map <F2> :lcd %:p:h<CR>
 " Set font
 "set guifont=Terminus\ 8
 " -- This has a bug with italics being cut off
-set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 9  
+set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 9 
 "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 
 " Tabs are 4 spaces
@@ -341,14 +341,20 @@ let g:tern_show_argument_hints='on_hold'
 " let g:neocomplcache_enable_at_startup = 1
 
 "" vim-airline
-" Set this to enable airline by default
-" set laststatus=2
+" Set this to enable bottom airline by default
+set laststatus=2
 " Use powerline font
 let g:airline_powerline_fonts = 1
 " Disable whitespace check
 let g:airline_detect_whitespace = 0
 " Enable tab line
 let g:airline#extensions#tabline#enabled = 1
+" Hide the tab type
+let g:airline#extensions#tabline#show_tab_type = 1
+let g:airline#extensions#tabline#close_symbol = 'X'
+" Setting buffer divider
+" let g:airline#extensions#tabline#left_sep = ''
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 " Show the buffer number
 let g:airline#extensions#tabline#buffer_nr_show = 1
 " Eliminate the space between buffer number
@@ -357,8 +363,6 @@ let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 let g:airline#extensions#tabline#buffer_min_count = 2
 " Use the `unique_tail` (or `unique_tail_improved` algorithm to display buffer
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-
-
 
 " Use mouse in terminal vim
 set mouse=a

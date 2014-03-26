@@ -129,6 +129,22 @@ vnoremap <C-C> "+y
 " Map leader
 let mapleader = ","
   
+" MiniBufExplorer plugin
+" Map <C-Q> to close buffer
+let g:miniBufExplTabWrap = 1
+let g:miniBufExplForceSyntaxEnable = 1
+"hi link MBEVisibleChanged StatusLine
+"hi link MBEVisibleNormal  StatusLine
+"hi link MBENormal         Folded
+"hi link MBEChanged        Error 
+" New mappings for MBE 
+"nnoremap <C-TAB>   :bn<CR>
+" nnoremap <C-S-TAB> :bp<CR>
+" Command mappings
+cnoreabbrev BD MBEbd
+cnoreabbrev BW MBEbw
+cnoreabbrev BU MBEbun
+
 " CtrlP plugin
 " Try to reuse window elsewhere for opened files
 let g:ctrlp_switch_buffer = 'Et'
@@ -348,21 +364,21 @@ let g:airline_powerline_fonts = 1
 " Disable whitespace check
 let g:airline_detect_whitespace = 0
 " Enable tab line
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 " Hide the tab type
-let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#tabline#close_symbol = 'X'
+" let g:airline#extensions#tabline#show_tab_type = 1
+" let g:airline#extensions#tabline#close_symbol = 'X'
 " Setting buffer divider
 " let g:airline#extensions#tabline#left_sep = ''
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 " Show the buffer number
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
 " Eliminate the space between buffer number
-let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+" let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 " Set min buffers to start showing tabline
-let g:airline#extensions#tabline#buffer_min_count = 2
+" let g:airline#extensions#tabline#buffer_min_count = 2
 " Use the `unique_tail` (or `unique_tail_improved` algorithm to display buffer
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Use mouse in terminal vim
 set mouse=a

@@ -205,11 +205,6 @@ endif
 " Use fugitive statusline instead of vim-airline
 " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" SuperTab plugin
-let g:SuperTabDefaultCompletionType = 'context'
-let g:SuperTabMappingForward = '<S-CR>'
-let g:SuperTabMappingBackward = '<C-S-CR>'
-
 " Eclim plugin
 nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
 let g:EclimTaglistEnable = 0

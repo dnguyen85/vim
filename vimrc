@@ -42,7 +42,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 map Z zO
 
 " Map changing directory to current file location
-map <F2> :lcd %:p:h<CR>
+map <leader>l :lcd %:p:h<CR>
 
 " Set font
 "set guifont=Terminus\ 8
@@ -142,14 +142,7 @@ let mapleader = ","
 let g:miniBufExplTabWrap = 1
 let g:miniBufExplForceSyntaxEnable = 1
 " Coloring
-hi def link MBENormal                Comment
-hi def link MBEChanged               String
-hi def link MBEVisibleNormal         Underlined
-hi def link MBEVisibleChanged        Special
-hi def link MBEVisibleActiveNormal   Special
-hi def link MBEVisibleActiveChanged  Error
-
-let g:did_minibufexplorer_syntax_inits = 1
+" Go into repo, checkout master and do a merge with color_fix
 
 " New mappings for MBE 
 "nnoremap <C-TAB>   :bn<CR>

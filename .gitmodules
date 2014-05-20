@@ -57,7 +57,7 @@
 	url = https://github.com/bling/vim-airline
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
-	url = git://github.com/fholgado/minibufexpl.vim.git
+	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/minibufexpl
 [submodule "bundle/jedi-vim"]
 	path = bundle/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git

@@ -4,6 +4,8 @@ call pathogen#helptags()
 
 set background=dark
 colorscheme solarized
+" Toggle background key to use F5
+call togglebg#map("")
 "colorscheme ir_black
 
 set nocompatible " Be iMproved, not compatible w/ vi
@@ -15,6 +17,9 @@ filetype indent on
 
 set autoindent
 set smartindent
+
+" Disable smartindent in python file. Don't need the auto indenting after '{'
+au! FileType python setl nosmartindent
 
 set ignorecase
 set smartcase
@@ -121,6 +126,9 @@ set tags+=tags;
 set tags+=~/.vim/tags/commontags
 
 " Map for cut and paste
+" Use C-Q to do what C-V normally do. Note: no recursive map here
+noremap <C-Q> <C-V>
+" Map C-V recursively
 map <C-V> "+gP
 cmap <C-V> <C-R>+
 vnoremap <C-X> "+x
@@ -133,10 +141,16 @@ let mapleader = ","
 " Map <C-Q> to close buffer
 let g:miniBufExplTabWrap = 1
 let g:miniBufExplForceSyntaxEnable = 1
-"hi link MBEVisibleChanged StatusLine
-"hi link MBEVisibleNormal  StatusLine
-"hi link MBENormal         Folded
-"hi link MBEChanged        Error 
+" Coloring
+hi def link MBENormal                Comment
+hi def link MBEChanged               String
+hi def link MBEVisibleNormal         Underlined
+hi def link MBEVisibleChanged        Special
+hi def link MBEVisibleActiveNormal   Special
+hi def link MBEVisibleActiveChanged  Error
+
+let g:did_minibufexplorer_syntax_inits = 1
+
 " New mappings for MBE 
 "nnoremap <C-TAB>   :bn<CR>
 " nnoremap <C-S-TAB> :bp<CR>
@@ -190,6 +204,7 @@ let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Taglist/Tagbar plugin maps
 nnoremap <silent> <F11> :TagbarToggle<CR> 
+nnoremap <silent> <leader>t :TagbarOpen fj<CR> 
 let g:tagbar_indent = 1
 let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
@@ -348,8 +363,94 @@ map <F12> :NERDTreeToggle<CR>
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
-" Neocomlcache
+""" Neocomlcache Setting Starts
+" Enabled at startup?
 " let g:neocomplcache_enable_at_startup = 1
+" imap <CR> to simply go to next line
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
+
+" imap smart <C-h>, <BS>: close popup and delete backword char, no more popups
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" <C-y> to close popup
+inoremap <expr><C-y>  neocomplcache#close_popup()
+" <C-e> to cancel popup
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" <C-g> to undo completion
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+
+" Set omnicompletion functions (called by neocomlcache
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Use jedi-vim' omnicompletion for python files, instead of neocomplcache
+" For python: use jedi-vim omnicompletion instead
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=jedi#completions
+
+" Should neocomlcache override other plugin's `completefunc` (User completion mode)
+" let g:neocomplcache_force_overwrite_completefunc = 1
+" Disable jedi-vim auto_vim_configuration
+let g:jedi#auto_vim_configuration = 0
+" Disable forcing omnicompletion, can be overriden by any plugin (see below)
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+" Auto-use omnicompletion instead of usercomplete on certain patterns, such as 'dot' (overriding jedi-vim behavior)
+let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.php =
+\ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+let g:neocomplcache_omni_patterns.c =
+\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+let g:neocomplcache_omni_patterns.cpp =
+\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+
+""" Neocomlcache Setting Stops
+
+""" Neosnippet plugin
+" C-k to select-and-expand a snippet from Neocomplcache popup (Use C-n and C-p
+" to select), C-k also jumps to next field in snippet
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+""" vim-jedi settings 
+" Should I do dot completion?
+let g:jedi#popup_on_dot = 0
+" Use buffer instead of tab for doc string
+let g:jedi#use_tabs_not_buffers = 0
+"" Default mappings
+" Go to assignment of variable
+let g:jedi#goto_assignments_command = "<leader>g"
+" Go to definition of variable
+let g:jedi#goto_definitions_command = "<leader>d"
+" Show docs string of variable
+let g:jedi#documentation_command = "K"
+" Show all usage of current variable
+let g:jedi#usages_command = "<leader>n"
+" Start completion
+let g:jedi#completions_command = "<C-Space>"
+" Rename command
+let g:jedi#rename_command = "<leader>r"
+" show call signature
+let g:jedi#show_call_signatures = "1"
 
 "" vim-airline
 " Set this to enable bottom airline by default
@@ -374,6 +475,10 @@ let g:airline_detect_whitespace = 0
 " let g:airline#extensions#tabline#buffer_min_count = 2
 " Use the `unique_tail` (or `unique_tail_improved` algorithm to display buffer
 " let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+"" Syntastic Syntax checker
+" Always populate location list for latex
+au! FileType tex let g:syntastic_always_populate_loc_list = 1
 
 " Use mouse in terminal vim
 set mouse=a

@@ -14,6 +14,7 @@ syntax on
 
 filetype plugin on
 filetype indent on
+filetype plugin indent on
 
 set autoindent
 set smartindent
@@ -42,7 +43,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
 map Z zO
 
 " Map changing directory to current file location
-map <leader>l :lcd %:p:h<CR>
+" map <leader>l :lcd %:p:h<CR>
 
 " Set font
 "set guifont=Terminus\ 8
@@ -151,6 +152,8 @@ let g:miniBufExplForceSyntaxEnable = 1
 cnoreabbrev BD MBEbd
 cnoreabbrev BW MBEbw
 cnoreabbrev BU MBEbun
+cnoreabbrev AU au BufWritePost <buffer> Vimwiki2HTML 
+cnoreabbrev NAU au! BufWritePost <buffer> 
 
 " CtrlP plugin
 " Try to reuse window elsewhere for opened files
@@ -206,7 +209,7 @@ let g:tagbar_autoshowtag = 1
 " Fugitive plugin
 cnoreabbrev Gs Gstatus
 " Mapping of navigating from blob or tree buffers
-nnoremap << :edit %:h<CR> 
+" nnoremap << :edit %:h<CR> 
 if has("autocmd")
     autocmd BufReadPost fugitive://* set bufhidden=delete
 endif
@@ -310,7 +313,7 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.
 let g:vimwiki_html_header_numbering_sym = '.'
 let g:vimwiki_html_header_numbering = 4
 let g:vimwiki_use_mouse = 1
-"let g:vimwiki_browsers=['firefox']
+let g:vimwiki_browsers=['google-chrome']
 " Do not let WikiWord to be a link
 let g:vimwiki_camel_case = 0
 hi VimwikiHeader1 guifg=#FDF6E3
@@ -472,6 +475,11 @@ let g:airline_detect_whitespace = 0
 "" Syntastic Syntax checker
 " Always populate location list for latex
 au! FileType tex let g:syntastic_always_populate_loc_list = 1
+
+"" Voom
+let g:voom_return_key  = "<S-Return>"
+let g:voom_tab_key  = ""
+let g:voom_tree_placement = "top"
 
 " Use mouse in terminal vim
 set mouse=a

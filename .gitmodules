@@ -73,3 +73,9 @@
 [submodule "bundle/splice.vim"]
 	path = bundle/splice.vim
 	url = https://github.com/sjl/splice.vim.git
+[submodule "bundle/neocomplete.vim"]
+	path = bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
+[submodule "bundle/neosnippet-snippets"]
+	path = bundle/neosnippet-snippets
+	url = https://github.com/Shougo/neosnippet-snippets

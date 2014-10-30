@@ -359,26 +359,26 @@ map <F12> :NERDTreeToggle<CR>
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
-""" Neocomlcache Setting Starts
+""" Neocomplete Setting Starts
 " Enabled at startup?
 " let g:neocomplcache_enable_at_startup = 1
 " imap <CR> to simply go to next line
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
+  return neocomplete#close_popup() . "\<CR>"
   " For no inserting <CR> key.
   "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
 endfunction
 
 " imap smart <C-h>, <BS>: close popup and delete backword char, no more popups
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " <C-y> to close popup
-inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-y>  neocomplete#close_popup()
 " <C-e> to cancel popup
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
 " <C-g> to undo completion
-inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-g>     neocomplete#undo_completion()
 
 " Set omnicompletion functions (called by neocomlcache
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -396,24 +396,21 @@ autocmd FileType python setlocal omnifunc=jedi#completions
 " Disable jedi-vim auto_vim_configuration
 let g:jedi#auto_vim_configuration = 0
 " Disable forcing omnicompletion, can be overriden by any plugin (see below)
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
 endif
 " Auto-use omnicompletion instead of usercomplete on certain patterns, such as 'dot' (overriding jedi-vim behavior)
-let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
+let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
 
 " Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.php =
-\ '[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-let g:neocomplcache_omni_patterns.c =
-\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
-let g:neocomplcache_omni_patterns.cpp =
-\ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-""" Neocomlcache Setting Stops
+""" Neocomplete Setting Stops
 
 """ Neosnippet plugin
 " C-k to select-and-expand a snippet from Neocomplcache popup (Use C-n and C-p

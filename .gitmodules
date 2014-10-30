@@ -73,3 +73,6 @@
 [submodule "bundle/vimoutliner"]
 	path = bundle/vimoutliner
 	url = https://github.com/vimoutliner/vimoutliner
+[submodule "bundle/splice.vim"]
+	path = bundle/splice.vim
+	url = https://github.com/sjl/splice.vim.git

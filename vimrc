@@ -48,7 +48,7 @@ map Z zO
 " Set font
 "set guifont=Terminus\ 8
 " -- This has a bug with italics being cut off
-set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 9 
+set guifont=Deja\ Vu\ Sans\ Mono\ for\ Powerline\ 10 
 "set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
 
 " Tabs are 4 spaces

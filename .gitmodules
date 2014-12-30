@@ -82,3 +82,6 @@
 [submodule "bundle/vim-mako"]
 	path = bundle/vim-mako
 	url = https://github.com/dang2327/vim-bundle-mako.git  
+[submodule "bundle/context_filetype.vim"]
+	path = bundle/context_filetype.vim
+	url = https://github.com/Shougo/context_filetype.vim

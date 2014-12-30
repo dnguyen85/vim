@@ -85,3 +85,6 @@
 [submodule "bundle/context_filetype.vim"]
 	path = bundle/context_filetype.vim
 	url = https://github.com/Shougo/context_filetype.vim
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets

@@ -409,6 +409,14 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+" Use Honza's snippets
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+" Snippets for mako filetype
+let g:neosnippet#scope_aliases = {}
+let g:neosnippet#scope_aliases['mako'] = 'mako,html'
+
 """ vim-jedi settings 
 " Should I do dot completion?
 let g:jedi#popup_on_dot = 0

@@ -457,11 +457,8 @@ let g:airline_detect_whitespace = 0
 "" Syntastic Syntax checker
 " Always populate location list for latex
 au! FileType tex let g:syntastic_always_populate_loc_list = 1
-
-"" Voom
-let g:voom_return_key  = "<S-Return>"
-let g:voom_tab_key  = ""
-let g:voom_tree_placement = "top"
+" Check header files
+let g:syntastic_cpp_check_header = 1
 
 " Use mouse in terminal vim
 set mouse=a

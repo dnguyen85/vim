@@ -27,7 +27,8 @@
 	url = https://github.com/jelera/vim-javascript-syntax.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
-	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vimwiki
+    #url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vimwiki
+    url = https://github.com/dang2327/vimwiki.git 
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime.git

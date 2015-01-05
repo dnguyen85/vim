@@ -79,7 +79,7 @@
 	url = https://github.com/Shougo/neocomplete.vim
 [submodule "bundle/neosnippet-snippets"]
 	path = bundle/neosnippet-snippets
-	url = https://github.com/Shougo/neosnippet-snippets
+	url = https://github.com/dang2327/neosnippet-snippets
 [submodule "bundle/vim-mako"]
 	path = bundle/vim-mako
 	url = https://github.com/dang2327/vim-bundle-mako.git  
@@ -88,4 +88,4 @@
 	url = https://github.com/Shougo/context_filetype.vim
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets
+	url = https://github.com/dang2327/vim-snippets

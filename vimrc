@@ -347,6 +347,10 @@ let g:tern_show_argument_hints='on_hold'
 """ Neocomplete Setting Starts
 " Enabled at startup?
 " let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+
+
 " imap <CR> to simply go to next line
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
@@ -360,10 +364,11 @@ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " <C-y> to close popup
 inoremap <expr><C-y>  neocomplete#close_popup()
-" <C-e> to cancel popup
+" <C-e> to cancel popup - same as <C-g>
 inoremap <expr><C-e>  neocomplete#cancel_popup()
 " <C-g> to undo completion
 inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Set omnicompletion functions (called by neocomlcache
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -416,6 +421,7 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " Snippets for mako filetype
 let g:neosnippet#scope_aliases = {}
 let g:neosnippet#scope_aliases['mako'] = 'mako,html'
+let g:neosnippet#scope_aliases['rst'] = 'rst,html'
 
 """ vim-jedi settings 
 " Should I do dot completion?

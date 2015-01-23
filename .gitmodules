@@ -95,3 +95,9 @@
 [submodule "bundle/vim-pandoc-syntax"]
 	path = bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+[submodule "bundle/vim-loremipsum"]
+	path = bundle/vim-loremipsum
+	url = https://github.com/vim-scripts/loremipsum
+[submodule "bundle/accelerated-smooth-scroll"]
+	path = bundle/accelerated-smooth-scroll
+	url = https://github.com/yonchu/accelerated-smooth-scroll.git

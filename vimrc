@@ -1,3 +1,8 @@
+" Should I load minibuf (disabled for splice)?
+if exists('nominibuf')
+    let g:pathogen_disabled = ['minibufexpl']
+endif
+
 " Pathogen
 call pathogen#infect()
 call pathogen#helptags()
@@ -19,6 +24,9 @@ filetype plugin indent on
 set autoindent
 set smartindent
 
+" Run matchit
+runtime macros/matchit.vim
+
 " Disable smartindent in python file. Don't need the auto indenting after '{'
 au! FileType python setl nosmartindent
 
@@ -36,6 +44,12 @@ else
     " Detect file change
     au FileChangedShell * echo "Warning: File changed on disk"
 endif
+
+" Auto smooth scrolling
+vnoremap <silent> <C-d> <Plug>(ac-smooth-scroll-c-d_v)
+vnoremap <silent> <C-u> <Plug>(ac-smooth-scroll-c-u_v)
+vnoremap <silent> <C-f> <Plug>(ac-smooth-scroll-c-f_v)
+vnoremap <silent> <C-b> <Plug>(ac-smooth-scroll-c-b_v)
 
 " set foldlevelstart=1
 " Space to toggle folds
@@ -67,6 +81,12 @@ set incsearch
 
 " Line wrapping
 set textwidth=80
+
+" Text should be wrap if too long
+set wrap
+
+" Set wrap automatically in vimdiff
+autocmd FilterWritePre * if &diff | setlocal wrap< | endif
 
 " Press F9 to toggle Paste mode during insert
 set pastetoggle=<f9>
@@ -212,8 +232,6 @@ set wildmode=longest,list
 " Do not use bash ctrl-j
 let g:BASH_Ctrl_j='off'
 let g:C_Ctrl_j='off'
-nnoremap F <C-F>
-nnoremap B <C-B>
 nnoremap <C-j>     <C-W>j
 nnoremap <C-k>     <C-W>k
 nnoremap <C-h>     <C-W>h
@@ -308,12 +326,34 @@ hi VimwikiHeader4 guifg=#B58900
 hi VimwikiHeader5 guifg=#268BD2
 hi VimwikiHeader6 guifg=#FDF6E3
 let g:vimwiki_hl_headers = 1
-let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
-                     \ 'path_html': '~/Dropbox/www/wiki', 
-                     \ 'auto_export' : 0,
-                     \ 'template_path': '~/Dropbox/www/',
-                     \ 'template_default': 'template', 
-                     \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}}]
+
+" List of wikis
+let wiki_1 = {}
+let wiki_1.path = '~/Dropbox/www/wiki_files/'
+let wiki_1.path_html = '~/Dropbox/www/wiki/'
+let wiki_1.auto_export = 0
+let wiki_1.template_path = '~/Dropbox/www/'
+let wiki_1.template_default = 'template'
+let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}
+
+let wiki_2 = {}
+let wiki_2.path = '~/Dropbox/Papers/'
+let wiki_2.path_html = '~/Dropbox/Papers/'
+let wiki_2.ext = '.txt'
+let wiki_2.auto_export = 0
+let wiki_2.template_path = '~/Dropbox/Papers/www/'
+let wiki_2.template_default = 'template'
+let wiki_2.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}
+
+let g:vimwiki_list = [wiki_1, wiki_2]
+
+" let g:vimwiki_list = [{'path': '~/Dropbox/www/wiki_files/',
+"                      \ 'path_html': '~/Dropbox/www/wiki', 
+"                      \ 'auto_export' : 0,
+"                      \ 'template_path': '~/Dropbox/www/',
+"                      \ 'template_default': 'template', 
+"                      \ 'nested_syntaxes' : {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}}]
+
 " Remap find previous link on current page
 map <leader>wb :VimwikiAll2HTML<CR><CR>
 " Remap convert page and open link (Note: this has been moved to inside vimwiki plugin
@@ -422,6 +462,8 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:neosnippet#scope_aliases = {}
 let g:neosnippet#scope_aliases['mako'] = 'mako,html'
 let g:neosnippet#scope_aliases['rst'] = 'rst,html'
+let g:neosnippet#scope_aliases['pandoc'] = 'pandoc,markdown,html'
+let g:neosnippet#scope_aliases['vimwiki'] = 'html'
 
 """ vim-jedi settings 
 " Should I do dot completion?

@@ -104,3 +104,6 @@
 [submodule "bundle/diffchar.vim"]
 	path = bundle/diffchar.vim
 	url = https://github.com/vim-scripts/diffchar.vim.git
+[submodule "bundle/DirDiff.vim"]
+	path = bundle/DirDiff.vim
+	url = https://github.com/vim-scripts/DirDiff.vim.git

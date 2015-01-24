@@ -3,6 +3,10 @@ if exists('nominibuf')
     let g:pathogen_disabled = ['minibufexpl']
 endif
 
+if exists('nodiffchar')
+    let g:pathogen_disabled = ['diffchar.vim']
+endif
+
 " Pathogen
 call pathogen#infect()
 call pathogen#helptags()
@@ -87,9 +91,6 @@ set textwidth=80
 " Text should be wrap if too long
 set wrap
 
-" Set wrap automatically in vimdiff
-autocmd FilterWritePre * if &diff | setlocal wrap< | endif
-
 " Press F9 to toggle Paste mode during insert
 set pastetoggle=<f9>
 
@@ -131,11 +132,6 @@ au BufRead,BufNewFile *.vhh             setfiletype vhdl
 au BufRead,BufNewFile * syn match TAB_CHAR "\t"
 "hi link TAB_CHAR Error
 "map <F8> :hi link TAB_CHAR Normal<CR>
-
-" diffchar plugin
-let g:DiffUnit = "Word1"
-" auto diffupdate
-let g:DiffUpdate = 1
 
 " For ctags
 " Vertical split open
@@ -522,6 +518,33 @@ let g:airline_detect_whitespace = 0
 au! FileType tex let g:syntastic_always_populate_loc_list = 1
 " Check header files
 let g:syntastic_cpp_check_header = 1
+
+"## diffchar plugin
+let g:DiffUnit = "Word1"
+" auto diffupdate
+let g:DiffUpdate = 1
+
+"## DirDiff settings
+" exclude folder and files
+let g:DirDiffExcludes = ".git,*.swp,*~,~*"
+
+" ignore lines with patterns
+" let g:DirDiffIgnore = 
+
+" Don't flag files as different based on whitespace
+let g:DirDiffAddArgs = "-w"
+
+"## End DirDiff
+
+"## Diffmode settings using 'au FilterWritePre * if &diff'
+
+" Set wrap automatically in vimdiff
+au FilterWritePre * if &diff | setlocal wrap< | endif
+
+" When in diffmode suppress annoying auto-folding (filler,context:1000) and don't check for white space differences
+au FilterWritePre * if &diff | exe 'set diffopt=filler,context:1000,iwhite' | exe 'execute "normal \<c-w>\<c-w>"' | endif 
+
+"## End Diffmode settings
 
 " Use mouse in terminal vim
 set mouse=a

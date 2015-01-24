@@ -1,6 +1,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/dnguyen85/vim-colors-solarized
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -101,3 +101,6 @@
 [submodule "bundle/accelerated-smooth-scroll"]
 	path = bundle/accelerated-smooth-scroll
 	url = https://github.com/yonchu/accelerated-smooth-scroll.git
+[submodule "bundle/diffchar.vim"]
+	path = bundle/diffchar.vim
+	url = https://github.com/vim-scripts/diffchar.vim.git

@@ -7,8 +7,10 @@ endif
 call pathogen#infect()
 call pathogen#helptags()
 
+" Colorscheme
 set background=dark
 colorscheme solarized
+
 " Toggle background key to use F5
 call togglebg#map("")
 "colorscheme ir_black
@@ -128,7 +130,12 @@ au BufRead,BufNewFile *.vhh             setfiletype vhdl
 " Syntax highlight tabs as error
 au BufRead,BufNewFile * syn match TAB_CHAR "\t"
 "hi link TAB_CHAR Error
-map <F8> :hi link TAB_CHAR Normal<CR>
+"map <F8> :hi link TAB_CHAR Normal<CR>
+
+" diffchar plugin
+let g:DiffUnit = "Word1"
+" auto diffupdate
+let g:DiffUpdate = 1
 
 " For ctags
 " Vertical split open

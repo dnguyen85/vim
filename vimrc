@@ -52,10 +52,9 @@ else
 endif
 
 " Auto smooth scrolling
-vnoremap <silent> <C-d> <Plug>(ac-smooth-scroll-c-d_v)
-vnoremap <silent> <C-u> <Plug>(ac-smooth-scroll-c-u_v)
-vnoremap <silent> <C-f> <Plug>(ac-smooth-scroll-c-f_v)
-vnoremap <silent> <C-b> <Plug>(ac-smooth-scroll-c-b_v)
+map F <C-f>
+map B <Plug>(ac-smooth-scroll-c-b)
+vmap B <Plug>(ac-smooth-scroll-c-b_v)
 
 " set foldlevelstart=1
 " Space to toggle folds
@@ -548,5 +547,3 @@ au FilterWritePre * if &diff | exe 'set diffopt=filler,context:1000,iwhite' | ex
 
 " Use mouse in terminal vim
 set mouse=a
-
-

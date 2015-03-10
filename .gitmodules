@@ -107,3 +107,9 @@
 [submodule "bundle/DirDiff.vim"]
 	path = bundle/DirDiff.vim
 	url = https://github.com/vim-scripts/DirDiff.vim.git
+[submodule "bundle/voom"]
+	path = bundle/voom
+	url = https://github.com/vim-scripts/VOoM
+[submodule "bundle/vim-origami"]
+	path = bundle/vim-origami
+	url = https://github.com/kshenoy/vim-origami

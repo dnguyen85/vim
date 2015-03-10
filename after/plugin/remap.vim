@@ -4,3 +4,5 @@ nmap ]a <Plug>JumpDiffCharNextStart
 nmap [A <Plug>JumpDiffCharPrevEnd
 nmap ]A <Plug>JumpDiffCharNextEnd
 
+nnoremap <C-B> :CtrlPBuffer<CR>
+

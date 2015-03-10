@@ -59,7 +59,6 @@ vmap B <Plug>(ac-smooth-scroll-c-b_v)
 " set foldlevelstart=1
 " Space to toggle folds
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':'l')<CR>
-map Z zO
 
 " Map changing directory to current file location
 " map <leader>l :lcd %:p:h<CR>
@@ -334,7 +333,7 @@ let wiki_1 = {}
 let wiki_1.path = '~/Dropbox/www/wiki_files/'
 let wiki_1.path_html = '~/Dropbox/www/wiki/'
 let wiki_1.auto_export = 0
-let wiki_1.template_path = '~/Dropbox/www/'
+let wiki_1.template_path = '~/Dropbox/www/wiki_assets/'
 let wiki_1.template_default = 'template'
 let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}
 
@@ -343,7 +342,7 @@ let wiki_2.path = '~/Dropbox/Papers/'
 let wiki_2.path_html = '~/Dropbox/Papers/'
 let wiki_2.ext = '.txt'
 let wiki_2.auto_export = 0
-let wiki_2.template_path = '~/Dropbox/Papers/www/'
+let wiki_2.template_path = '~/Dropbox/wiki_assets/'
 let wiki_2.template_default = 'template'
 let wiki_2.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}
 
@@ -544,6 +543,13 @@ au FilterWritePre * if &diff | setlocal wrap< | endif
 au FilterWritePre * if &diff | exe 'set diffopt=filler,context:1000,iwhite' | exe 'execute "normal \<c-w>\<c-w>"' | endif 
 
 "## End Diffmode settings
+
+" Voom settings
+" let g:voom_tree_placement = "right"
+
+" Vim origami
+let g:OrigamiSeparateLevels = 1
+autocmd FileType matlab set foldmethod=marker
 
 " Use mouse in terminal vim
 set mouse=a

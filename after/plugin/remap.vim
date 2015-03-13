@@ -6,3 +6,9 @@ nmap ]A <Plug>JumpDiffCharNextEnd
 
 nnoremap <C-B> :CtrlPBuffer<CR>
 
+" IMAP settings, syntax is (lhs, rhs, filetype for mapping)
+call IMAP ('()', '(<++>)<++>', "")
+call IMAP ('[]', '[<++>]<++>', "")
+call IMAP ('{}', '{<++>}<++>', "")
+
+

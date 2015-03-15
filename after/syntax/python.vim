@@ -1,0 +1,8 @@
+" Highlight docstrings as comments, not string.
+syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?"""+ end=+"""+ keepend excludenl contains=pythonEscape,@Spell,pythonDoctest,pythonDocTest2,pythonSpaceError
+syn region pythonDocstring  start=+^\s*[uU]\?[rR]\?'''+ end=+'''+ keepend excludenl contains=pythonEscape,@Spell,pythonDoctest,pythonDocTest2,pythonSpaceError
+
+hi def link pythonDocstring pythonComment
+
+" Support for `self` highlight in python
+syn keyword pythonSelf self

@@ -1,0 +1,3 @@
+test|pdf
+article|pdf -S -N --latex-engine=pdflatex --listings
+danh|pdf -S -N --latex-engine=pdflatex

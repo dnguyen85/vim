@@ -113,3 +113,12 @@
 [submodule "bundle/vim-origami"]
 	path = bundle/vim-origami
 	url = https://github.com/kshenoy/vim-origami
+[submodule "bundle/goyo.vim"]
+	path = bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "bundle/limelight.vim"]
+	path = bundle/limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule "bundle/vim-writingsyntax"]
+	path = bundle/vim-writingsyntax
+	url = https://github.com/jamestomasino/vim-writingsyntax

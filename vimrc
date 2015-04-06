@@ -110,6 +110,9 @@ set printoptions=number:y
 " map <F5> :make<CR>
 " map <F6> :make test<CR>
 
+" Goyo reading
+map <F5> :Goyo<CR>
+
 " Typing jj quickly escapes out of INSERT mode
 imap jk <Esc>
 
@@ -556,6 +559,11 @@ autocmd FileType matlab set foldmethod=marker
 function! SynStack()
     echo join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'), " > ")
 endfunc
+
+" Pandoc mapping
+map <localleader>c :Pandoc #article<CR>
+let g:pandoc#formatting#mode = 'ha'
+let g:pandoc#formatting#textwidth = 80
 
 " Use mouse in terminal vim
 set mouse=a

@@ -562,6 +562,7 @@ endfunc
 
 " Pandoc mapping
 map <localleader>c :Pandoc #article<CR>
+map <localleader>r :Pandoc revealjs<CR>
 let g:pandoc#formatting#mode = 'ha'
 let g:pandoc#formatting#textwidth = 80
 

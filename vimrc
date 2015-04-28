@@ -48,7 +48,8 @@ if has("gui_running")
 else
     " VIM only, no GVIM
     " Detect file change
-    au FileChangedShell * echo "Warning: File changed on disk"
+    set updatetime=1000
+    au CursorHold * if getcmdwintype() == '' | checktime | endif
 endif
 
 " Auto smooth scrolling
@@ -565,6 +566,14 @@ map <localleader>c :Pandoc #article<CR>
 map <localleader>r :Pandoc revealjs<CR>
 let g:pandoc#formatting#mode = 'ha'
 let g:pandoc#formatting#textwidth = 80
+
+" Vertical split and open buffer 
+function! VerticalSplitBuffer(buffer)
+    execute "vert belowright sb" a:buffer 
+endfunction
+
+" Vertical split and open buffer (mapping)
+command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 
 " Use mouse in terminal vim
 set mouse=a

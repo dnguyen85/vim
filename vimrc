@@ -34,7 +34,11 @@ set smartindent
 runtime macros/matchit.vim
 
 " Disable smartindent in python file. Don't need the auto indenting after '{'
-au! FileType python setl nosmartindent
+au! FileType python setl nosmartindent 
+
+" Python set tab attributes
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
 
 set ignorecase
 set smartcase
@@ -48,8 +52,8 @@ if has("gui_running")
 else
     " VIM only, no GVIM
     " Detect file change
-    set updatetime=1000
-    au CursorHold * if getcmdwintype() == '' | checktime | endif
+    " set updatetime=1000
+    " au CursorHold * if getcmdwintype() == '' | checktime | endif
 endif
 
 " Auto smooth scrolling
@@ -112,7 +116,9 @@ set printoptions=number:y
 " map <F6> :make test<CR>
 
 " Goyo reading
-map <F5> :Goyo<CR>
+"map <F5> :Goyo<CR>
+let g:goyo_width = 120
+
 
 " Typing jj quickly escapes out of INSERT mode
 imap jk <Esc>
@@ -189,7 +195,7 @@ let g:ctrlp_working_path_mode = 'ra'
 " Use Caching
 let g:ctrlp_use_caching = 1
 " Set ignored folders
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip\time,*/.git/*,*/.hg/*,*/.svn/*  
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip\time,*/.git/*,*/.hg/*,*/.svn/*,*.pdf  
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_extensions = ['tag']
 
@@ -216,7 +222,7 @@ let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
 "let g:tlist_tex_settings = 'latex;s:sections;g:graphics;l:labels;r:refs;p:page refs;b:bibitems'
 
-" Fugitive plugin
+"" Fugitive plugin
 cnoreabbrev Gs Gstatus
 " Mapping of navigating from blob or tree buffers
 " nnoremap << :edit %:h<CR> 
@@ -271,9 +277,9 @@ let g:Tex_ViewRule_dvi='okular --unique'
 let g:Tex_ViewRule_pdf='okular --unique'
 let g:Tex_CompileRule_dvi = 'latex -shell-escape -synctex=1 -src-specials -interaction=nonstopmode $*'
 let g:Tex_CompileRule_ps = 'dvips -Ppdf -R0 -o $*.ps $*.dvi'
-"let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
+" let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
 let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -synctex=1 -src-specials -interaction=nonstopmode $*'
-"let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
+" let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
 let g:Tex_Leader = ','
 let g:Tex_GotoError=0
 " Use symbol math
@@ -342,6 +348,7 @@ let wiki_1.template_default = 'template'
 let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'c': 'cpp', 'css': 'css', 'js': 'javascript', 'javascript': 'javascript', 'html': 'html', 'matlab': 'matlab'}
 
 let wiki_2 = {}
+let wiki_2.index = 'Nguyen - index - 2015'
 let wiki_2.path = '~/Dropbox/Papers/'
 let wiki_2.path_html = '~/Dropbox/Papers/'
 " let wiki_2.ext = '.wiki'
@@ -456,7 +463,7 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " For snippet_complete marker.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+  set conceallevel=2 "concealcursor=i
 endif
 
 " Use Honza's snippets
@@ -574,6 +581,9 @@ endfunction
 
 " Vertical split and open buffer (mapping)
 command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
+
+" Thesaurus
+set thesaurus+=~/.thesaurus/mthesaur.txt
 
 " Use mouse in terminal vim
 set mouse=a

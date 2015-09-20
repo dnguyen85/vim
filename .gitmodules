@@ -122,3 +122,6 @@
 [submodule "bundle/vim-writingsyntax"]
 	path = bundle/vim-writingsyntax
 	url = https://github.com/jamestomasino/vim-writingsyntax
+[submodule "bundle/neco-look"]
+	path = bundle/neco-look
+	url = https://github.com/ujihisa/neco-look

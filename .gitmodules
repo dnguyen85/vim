@@ -125,3 +125,6 @@
 [submodule "bundle/neco-look"]
 	path = bundle/neco-look
 	url = https://github.com/ujihisa/neco-look
+[submodule "bundle/neoinclude.vim"]
+	path = bundle/neoinclude.vim
+	url = https://github.com/Shougo/neoinclude.vim

@@ -149,7 +149,7 @@ map <C-x><C-x><C-R> :!ctags -R *<CR><CR>
 
 " For gf gotoFile in vertical split
 " Remember to :set path+=../**
-map <leader>s :set path=.,,..,../..,./*,./*/*,../*,~/,~/**,/usr/include/*<CR>
+map <localleader>s :set path=.,,../../**,/usr/include/*<CR>
 map gF :vsp <CR> <C-w>l gf
 
 " Set tag search dir
@@ -402,6 +402,8 @@ let g:tern_show_argument_hints='on_hold'
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
 
+" ctags comment for include sources
+let g:neocomplete#ctags_command = '/usr/bin/ctags'
 
 " imap <CR> to simply go to next line
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
@@ -584,6 +586,7 @@ command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 
 " Thesaurus
 set thesaurus+=~/.thesaurus/mthesaur.txt
+set dictionary+=/usr/share/dict/words
 
 " Use mouse in terminal vim
 set mouse=a

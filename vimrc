@@ -3,6 +3,8 @@ if exists('nominibuf')
     let g:pathogen_disabled = ['minibufexpl']
 endif
 
+let g:pathogen_disabled = ['minibufexpl']
+
 if exists('nodiffchar')
     let g:pathogen_disabled = ['diffchar.vim']
 endif
@@ -176,13 +178,7 @@ let g:miniBufExplForceSyntaxEnable = 1
 " Coloring
 " Go into repo, checkout master and do a merge with color_fix
 
-" New mappings for MBE 
-"nnoremap <C-TAB>   :bn<CR>
-" nnoremap <C-S-TAB> :bp<CR>
-" Command mappings
-cnoreabbrev BD MBEbd
-cnoreabbrev BW MBEbw
-cnoreabbrev BU MBEbun
+" New mappings for command mode
 cnoreabbrev AU au BufWritePost <buffer> Vimwiki2HTML 
 cnoreabbrev NAU au! BufWritePost <buffer> 
 
@@ -508,21 +504,25 @@ let g:airline_powerline_fonts = 1
 " Disable whitespace check
 let g:airline_detect_whitespace = 0
 " Enable tab line
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 " Hide the tab type
-" let g:airline#extensions#tabline#show_tab_type = 1
-" let g:airline#extensions#tabline#close_symbol = 'X'
+let g:airline#extensions#tabline#show_tab_type = 0
+let g:airline#extensions#tabline#close_symbol = 'X'
 " Setting buffer divider
 " let g:airline#extensions#tabline#left_sep = ''
 " let g:airline#extensions#tabline#left_alt_sep = '|'
+" Format buffer filenames
+let g:airline#extensions#tabline#fnamemod = ':t'
 " Show the buffer number
-" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 " Eliminate the space between buffer number
-" let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+" Collapse path for long filename
+let g:airline#extensions#tabline#fnamecollapse=1
 " Set min buffers to start showing tabline
-" let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#buffer_min_count = 2
 " Use the `unique_tail` (or `unique_tail_improved` algorithm to display buffer
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 "" Syntastic Syntax checker
 " Always populate location list for latex

@@ -379,6 +379,7 @@ inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
 
 " Slime plugin
 let g:slime_target = "tmux"
+let g:slime_python_ipython = 1
 
 " NERD Tree plugin
 " let g:NERDTreeBookmarksFile = "/home/dhn24/Dropbox/Research/work_files/NERDTreeBookmarks"
@@ -431,16 +432,18 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType python setlocal omnifunc=jedi#completions
 
-" Should neocomlcache override other plugin's `completefunc` (User completion mode)
-" let g:neocomplcache_force_overwrite_completefunc = 1
 " Disable jedi-vim auto_vim_configuration
+let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+
 " Disable forcing omnicompletion, can be overriden by any plugin (see below)
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 " Auto-use omnicompletion instead of usercomplete on certain patterns, such as 'dot' (overriding jedi-vim behavior)
-let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
+" (alternate pattern) let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')
@@ -502,7 +505,7 @@ set laststatus=2
 " Use powerline font
 let g:airline_powerline_fonts = 1
 " Disable whitespace check
-let g:airline_detect_whitespace = 0
+let g:airline#extensions#whitespace#enabled = 0
 " Enable tab line
 let g:airline#extensions#tabline#enabled = 1
 " Hide the tab type
@@ -558,7 +561,7 @@ au FilterWritePre * if &diff | exe 'set diffopt=filler,context:1000,iwhite' | ex
 "## End Diffmode settings
 
 " Voom settings
-" let g:voom_tree_placement = "right"
+let g:voom_tree_placement = "top"
 
 " Vim origami
 let g:OrigamiSeparateLevels = 1

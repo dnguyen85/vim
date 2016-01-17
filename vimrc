@@ -3,7 +3,7 @@ if exists('nominibuf')
     let g:pathogen_disabled = ['minibufexpl']
 endif
 
-let g:pathogen_disabled = ['minibufexpl']
+let g:pathogen_disabled = ['minibufexpl', 'auto-pairs']
 
 if exists('nodiffchar')
     let g:pathogen_disabled = ['diffchar.vim']
@@ -12,6 +12,9 @@ endif
 " Pathogen
 call pathogen#infect()
 call pathogen#helptags()
+
+" Plugin managements with Enabler
+au FileType * if &ft != 'vimwiki' && &ft != 'tex' | Enable auto-pairs | endif
 
 " Colorscheme
 set background=dark
@@ -40,7 +43,6 @@ au! FileType python setl nosmartindent
 
 " Python set tab attributes
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-
 
 set ignorecase
 set smartcase
@@ -590,6 +592,9 @@ command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 " Thesaurus
 set thesaurus+=~/.thesaurus/mthesaur.txt
 set dictionary+=/usr/share/dict/words
+
+" Autopairs
+let g:AutoPairsShortcutJump = '<C-i>' 
 
 " Use mouse in terminal vim
 set mouse=a

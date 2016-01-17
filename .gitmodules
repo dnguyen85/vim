@@ -131,3 +131,9 @@
 [submodule "bundle/vim-bufkill"]
 	path = bundle/vim-bufkill
 	url = https://github.com/qpkorr/vim-bufkill
+[submodule "bundle/auto-paris"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "bundle/enabler_vim"]
+	path = bundle/enabler_vim
+	url = https://github.com/tomtom/enabler_vim

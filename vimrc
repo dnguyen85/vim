@@ -1,9 +1,5 @@
 " Should I load minibuf (disabled for splice)?
-if exists('nominibuf')
-    let g:pathogen_disabled = ['minibufexpl']
-endif
-
-let g:pathogen_disabled = ['minibufexpl', 'auto-pairs']
+let g:pathogen_disabled = ['auto-pairs']
 
 if exists('nodiffchar')
     let g:pathogen_disabled = ['diffchar.vim']

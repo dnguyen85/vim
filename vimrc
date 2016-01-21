@@ -214,7 +214,7 @@ let g:EnhCommentifyUseBlockIndent = 'yes'
 
 " Taglist/Tagbar plugin maps
 nnoremap <silent> <F11> :TagbarToggle<CR> 
-nnoremap <silent> <leader>t :TagbarOpen fj<CR> 
+nnoremap <silent> <leader>f :TagbarOpen fj<CR> 
 let g:tagbar_indent = 1
 let g:tagbar_autoshowtag = 1
 "let g:tlist_vhdl_settings   = 'vhdl;d:package declarations;b:package bodies;e:entities;a:architecture specifications;t:type declarations;p:processes;f:functions;r:procedures;s:signals;v:variables;g:generic maps;h:generic maps id;m:port maps;n:port maps id;q:components;c:constants;l:constants type;u:sub types'
@@ -578,8 +578,10 @@ endfunc
 " Pandoc mapping
 map <localleader>c :Pandoc #article<CR>
 map <localleader>r :Pandoc revealjs<CR>
-let g:pandoc#formatting#mode = 'ha'
+let g:pandoc#formatting#mode = 'hA'
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
 let g:pandoc#formatting#textwidth = 80
+let g:pandoc#after#modules#enabled = ["tablemode"]
 
 " Vertical split and open buffer 
 function! VerticalSplitBuffer(buffer)
@@ -588,6 +590,10 @@ endfunction
 
 " Vertical split and open buffer (mapping)
 command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
+
+" Table mode
+let g:table_mode_header_fillchar = '='
+let g:table_mode_corner_corner = '+'
 
 " Thesaurus
 set thesaurus+=~/.thesaurus/mthesaur.txt

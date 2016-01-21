@@ -10,7 +10,11 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " Plugin managements with Enabler
-au FileType * if &ft != 'vimwiki' && &ft != 'tex' | Enable auto-pairs | endif
+set rtp+=$HOME/.vim/bundle/enabler_vim
+runtime! plugin/enabler.vim
+Enablefiletype python auto-pairs
+Enablefiletype c auto-pairs
+Enablefiletype cpp auto-pairs
 
 " Colorscheme
 set background=dark
@@ -590,7 +594,7 @@ set thesaurus+=~/.thesaurus/mthesaur.txt
 set dictionary+=/usr/share/dict/words
 
 " Autopairs
-let g:AutoPairsShortcutJump = '<C-i>' 
+let g:AutoPairsShortcutJump = '<C-y>' 
 
 " Use mouse in terminal vim
 set mouse=a

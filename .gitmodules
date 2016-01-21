@@ -134,3 +134,9 @@
 [submodule "bundle/enabler_vim"]
 	path = bundle/enabler_vim
 	url = https://github.com/tomtom/enabler_vim
+[submodule "bundle/vim-pandoc-after"]
+	path = bundle/vim-pandoc-after
+	url = https://github.com/vim-pandoc/vim-pandoc-after
+[submodule "bundle/vim-table-mode"]
+	path = bundle/vim-table-mode
+	url = https://github.com/dhruvasagar/vim-table-mode

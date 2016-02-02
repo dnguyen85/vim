@@ -42,7 +42,7 @@ runtime macros/matchit.vim
 au! FileType python setl nosmartindent 
 
 " Python set tab attributes
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 set ignorecase
 set smartcase

@@ -141,5 +141,5 @@
 	path = bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode
 [submodule "bundle/bundle/vim-taskwarrior"]
-	path = bundle/bundle/vim-taskwarrior
+	path = bundle/vim-taskwarrior
 	url = https://github.com/blindFS/vim-taskwarrior

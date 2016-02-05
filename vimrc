@@ -13,11 +13,14 @@ call pathogen#helptags()
 set rtp+=$HOME/.vim/bundle/enabler_vim
 runtime! plugin/enabler.vim
 Enablefiletype python auto-pairs
+Enablefiletype matlab auto-pairs
 Enablefiletype c auto-pairs
 Enablefiletype cpp auto-pairs
 
 " Colorscheme
 set background=dark
+" set background=light
+
 colorscheme solarized
 
 " Toggle background key to use F5
@@ -577,6 +580,7 @@ endfunc
 
 " Pandoc mapping
 map <localleader>c :Pandoc #article<CR>
+map <localleader>C :Pandoc! #article<CR>
 map <localleader>r :Pandoc revealjs<CR>
 let g:pandoc#formatting#mode = 'hA'
 let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1

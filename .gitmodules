@@ -140,6 +140,3 @@
 [submodule "bundle/vim-table-mode"]
 	path = bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode
-[submodule "bundle/terminalkeys.vim"]
-	path = bundle/terminalkeys.vim
-	url = https://github.com/nacitar/terminalkeys.vim

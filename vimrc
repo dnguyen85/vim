@@ -13,6 +13,7 @@ call pathogen#helptags()
 set rtp+=$HOME/.vim/bundle/enabler_vim
 runtime! plugin/enabler.vim
 Enablefiletype python auto-pairs
+Enablefiletype vim auto-pairs
 Enablefiletype matlab auto-pairs
 Enablefiletype c auto-pairs
 Enablefiletype cpp auto-pairs
@@ -61,6 +62,10 @@ else
     " Detect file change
     " set updatetime=1000
     " au CursorHold * if getcmdwintype() == '' | checktime | endif
+    
+    " Enable italics
+    set t_ZH=[3m
+    set t_ZR=[23m
 endif
 
 " Auto smooth scrolling
@@ -125,7 +130,6 @@ set printoptions=number:y
 " Goyo reading
 "map <F5> :Goyo<CR>
 let g:goyo_width = 120
-
 
 " Typing jj quickly escapes out of INSERT mode
 imap jk <Esc>
@@ -578,14 +582,19 @@ function! SynStack()
     echo join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'), " > ")
 endfunc
 
-" Pandoc mapping
+" Pandoc mapping ---------------------------------------------
 map <localleader>c :Pandoc #article<CR>
 map <localleader>C :Pandoc! #article<CR>
 map <localleader>r :Pandoc revealjs<CR>
-let g:pandoc#formatting#mode = 'hA'
+let g:pandoc#formatting#mode = 's'
 let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
 let g:pandoc#formatting#textwidth = 80
 let g:pandoc#after#modules#enabled = ["tablemode"]
+" Disable folding
+let g:pandoc#modules#disabled = ["folding"]
+" Use bibtool to search for citekey for all bibs in current dir
+" Note: requires mapping of bibtex dir
+let g:pandoc#biblio#use_bibtool = 1
 
 " Vertical split and open buffer 
 function! VerticalSplitBuffer(buffer)
@@ -598,6 +607,10 @@ command -nargs=1 Vbuffer call VerticalSplitBuffer(<f-args>)
 " Table mode
 let g:table_mode_header_fillchar = '='
 let g:table_mode_corner_corner = '+'
+let g:table_mode_motion_left_map = '[['
+let g:table_mode_motion_right_map = ']]'
+let g:table_mode_motion_up_map = '{{'
+let g:table_mode_motion_down_map = '}}'
 
 " Thesaurus
 set thesaurus+=~/.thesaurus/mthesaur.txt

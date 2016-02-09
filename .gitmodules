@@ -143,3 +143,6 @@
 [submodule "bundle/gitv"]
 	path = bundle/gitv
 	url = https://github.com/gregsexton/gitv
+[submodule "bundle/vim-seek"]
+	path = bundle/vim-seek
+	url = https://github.com/goldfeld/vim-seek

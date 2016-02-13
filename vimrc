@@ -179,7 +179,10 @@ vnoremap <C-C> "+y
 
 " Map leader
 let mapleader = ","
-  
+
+" Map for tab close
+nmap <leader>gc :tabclose<CR>
+
 " MiniBufExplorer plugin
 " Map <C-Q> to close buffer
 let g:miniBufExplTabWrap = 1
@@ -237,9 +240,16 @@ endif
 " Use fugitive statusline instead of vim-airline
 " set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+" Gitv plugin
+nmap <leader>gv :Gitv --all<cr>
+nmap <leader>gV :Gitv! --all<cr>
+vmap <leader>gV :Gitv! --all<cr>
+let g:Gitv_DoNotMapCtrlKey = 1
+
+
 " Eclim plugin
-nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
-let g:EclimTaglistEnable = 0
+" nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
+" let g:EclimTaglistEnable = 0
 
 " Tab completion acts more like bash, presenting list of options
 set wildmode=longest,list
@@ -517,6 +527,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 " Enable tab line
 let g:airline#extensions#tabline#enabled = 1
+" Set the tab number to show actual number, instead of # of splits
+let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+
 " Hide the tab type
 let g:airline#extensions#tabline#show_tab_type = 0
 let g:airline#extensions#tabline#close_symbol = 'X'

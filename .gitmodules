@@ -38,9 +38,6 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "bundle/vim-matlab-fold"]
-	path = bundle/vim-matlab-fold
-	url = git://github.com/djoshea/vim-matlab-fold.git
 [submodule "bundle/vim-matlab"]
 	path = bundle/vim-matlab
 	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vim-matlab

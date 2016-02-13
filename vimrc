@@ -587,7 +587,7 @@ let g:voom_tree_placement = "top"
 
 " Vim origami
 let g:OrigamiSeparateLevels = 1
-autocmd FileType matlab set foldmethod=marker
+autocmd FileType matlab,python set foldmethod=marker
 
 " Show the stack of syntax hilighting classes affecting whatever is under the
 " cursor.

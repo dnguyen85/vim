@@ -148,4 +148,4 @@
 	url = https://github.com/tmhedberg/SimpylFold
 [submodule "bundle/vim-matlab-fold"]
 	path = bundle/vim-matlab-fold
-	url = https://github.com/dnguyen85/vim-matlab-fold
+	url = https://github.com/esquires/vim-matlab-fold

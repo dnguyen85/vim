@@ -589,7 +589,6 @@ let g:voom_tree_placement = "top"
 let g:OrigamiSeparateLevels = 1
 
 "" Folding
-autocmd FileType matlab set foldmethod=marker
 nnoremap zk zk[z 
 " Open file at highest foldlevel
 autocmd BufWinEnter *.py,*.m let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))

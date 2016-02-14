@@ -608,7 +608,7 @@ function! NeatFoldText() "{{{2
   let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
   return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
 endfunction
-set foldtext=NeatFoldText()
+" set foldtext=NeatFoldText()
 " }}}2
 
 " Show the stack of syntax hilighting classes affecting whatever is under the

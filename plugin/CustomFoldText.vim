@@ -20,10 +20,10 @@ fu! CustomFoldText(string) "{{{1
 "   let line = substitute(line, matchstr(&l:cms,
 "	    \ '^.\{-}\ze%s').'\?\s*'. split(&l:fmr,',')[0].'\s*\d\+', '', '')
 
-    let w = get(g:, 'custom_foldtext_max_width', winwidth(0)) - &foldcolumn - (&number ? 8 : 0)
+    let w = get(g:, 'custom_foldtext_max_width', winwidth(0)) - &foldcolumn - (&number ? 4 : 0)
     let foldSize = 1 + v:foldend - v:foldstart
     let foldSizeStr = " " . foldSize . " lines "
-    let foldLevelStr = '+'. v:folddashes
+    let foldLevelStr = ''
     let lineCount = line("$")
     if has("float")
 	try
@@ -33,9 +33,9 @@ fu! CustomFoldText(string) "{{{1
 	endtry
     endif
     if exists("*strwdith")
-	let expansionString = repeat(a:string, w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
+	let expansionString = repeat(" ", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
     else
-	let expansionString = repeat(a:string, w - strlen(substitute(foldSizeStr.line.foldLevelStr.foldPercentage, '.', 'x', 'g')))
+	let expansionString = repeat(" ", w - strlen(substitute(foldSizeStr.line.foldLevelStr.foldPercentage, '.', 'x', 'g')))
     endif
     return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
 endf

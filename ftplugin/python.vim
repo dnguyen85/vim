@@ -65,16 +65,28 @@ function! PythonFoldText()
     let line = line . ' pass'
   endif
   "compute the width of the visible part of the window (see Note above)
-  let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+  let w = winwidth(0) - &foldcolumn - (&number ? &numberwidth : 0)
   let size = 1 + v:foldend - v:foldstart
+  let foldSizeStr = " | " . size . "L "
+  "compute percentage
+  let lineCount = line("$")
+
+    if has("float")
+	try
+	    let foldPercentage = printf("[%.1f", (size*1.0)/lineCount*100) . "%] "
+	catch /^Vim\%((\a\+)\)\=:E806/	" E806: Using Float as String
+	    let foldPercentage = printf("[of %d lines] ", lineCount)
+	endtry
+    endif
+
   "compute expansion string
-  let spcs = '................'
+  let spcs = ' '
   while strlen(spcs) < w | let spcs = spcs . spcs
   endwhile
   "expand tabs (mail me if you have tabstop>10)
   let onetab = strpart('          ', 0, &tabstop)
   let line = substitute(line, '\t', onetab, 'g')
-  return strpart(line.spcs, 0, w-strlen(size)-7).'.'.size.' lines'
+  return strpart(line.spcs, 0, w-strlen(foldSizeStr)-strlen(foldPercentage)) . foldSizeStr . foldPercentage
 endfunction
 
 function! GetBlockIndent(lnum)

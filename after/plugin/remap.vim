@@ -11,7 +11,6 @@ nnoremap <C-B> :CtrlPBuffer<CR>
 " call IMAP ('[]', '[<++>]<++>', "")
 " call IMAP ('{}', '{<++>}<++>', "")
 
-hi Folded term=bold gui=bold
 
 
 

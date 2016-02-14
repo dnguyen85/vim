@@ -592,7 +592,7 @@ let g:OrigamiSeparateLevels = 1
 autocmd FileType matlab set foldmethod=marker
 nnoremap zk zk[z 
 " Open file at highest foldlevel
-autocmd BufWinEnter * let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
+autocmd BufWinEnter *.py,*.m let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
 " SimpyllFold python
 let g:SimpylFold_fold_docstring = 0

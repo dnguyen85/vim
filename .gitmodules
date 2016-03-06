@@ -143,3 +143,6 @@
 [submodule "bundle/vim-matlab-fold"]
 	path = bundle/vim-matlab-fold
 	url = https://github.com/esquires/vim-matlab-fold
+[submodule "bundle/vim-pandoc"]
+	path = bundle/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc

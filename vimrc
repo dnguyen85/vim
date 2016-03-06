@@ -245,7 +245,9 @@ nmap <leader>gv :Gitv --all<cr>
 nmap <leader>gV :Gitv! --all<cr>
 vmap <leader>gV :Gitv! --all<cr>
 let g:Gitv_DoNotMapCtrlKey = 1
-
+" Remap back some ctrl key
+au FileType gitv nmap <buffer> <silent> J <Plug>(gitv-previous-commit)
+au FileType gitv nmap <buffer> <silent> K <Plug>(gitv-next-commit)
 
 " Eclim plugin
 " nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
@@ -395,6 +397,8 @@ inoremap <F3> <C-R>=strftime("(%H:%M) ")<CR>
 inoremap <F4> <C-R>=strftime("==== %m/%d/%Y ====\n")<CR>
 " Map <F6> to insert images string in insert mode
 inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
+" Imap <leader>c
+inoremap <leader>d <!-- --><CR>
 
 " Slime plugin
 let g:slime_target = "tmux"
@@ -591,7 +595,7 @@ let g:OrigamiSeparateLevels = 1
 "" Folding
 nnoremap zk zk[z 
 " Open file at highest foldlevel
-autocmd BufWinEnter *.py,*.m let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
+autocmd BufWinEnter *.py,*.m,*.md let &foldlevel = max(map(range(1, line('$')), 'foldlevel(v:val)'))
 
 " SimpyllFold python
 let g:SimpylFold_fold_docstring = 0
@@ -607,11 +611,11 @@ map <localleader>c :Pandoc #article<CR>
 map <localleader>C :Pandoc! #article<CR>
 map <localleader>r :Pandoc revealjs<CR>
 let g:pandoc#formatting#mode = 's'
-let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
+let g:pandoc#formatting#smart_autoformat_on_cursormoved = 0
 let g:pandoc#formatting#textwidth = 80
 let g:pandoc#after#modules#enabled = ["tablemode"]
 " Disable folding
-let g:pandoc#modules#disabled = ["folding"]
+" let g:pandoc#modules#disabled = ["folding"]
 " Use bibtool to search for citekey for all bibs in current dir
 " Note: requires mapping of bibtex dir
 let g:pandoc#biblio#use_bibtool = 1

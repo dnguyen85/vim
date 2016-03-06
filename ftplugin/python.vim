@@ -169,7 +169,7 @@ function! GetPythonFold(lnum)
         " Case S*<0* and S*=0*: global code
         elseif line !~'^#\s'
             " Case S*<0*: new global statement if/while/for/try/with
-            if 0<pind && line!~'^else\s*:\|^except.*:\|^elif.*:\|^finally\s*:' | return '>1'
+            if 0<pind && line!~'^else\s*:\|^except.*:\|^elif.*:\|^finally\s*:' | return '1'
             " Case S*=0*, after level 0 comment
             elseif 0==pind && getline(prevnonblank(a:lnum-1)) =~ '^\s*#\s' | return '>1'
             " Case S*=0*, other, stay 1

@@ -125,11 +125,9 @@ set printoptions=number:y
 
 " Run Make with F5/F6
 " map <F5> :make<CR>
-" map <F6> :make test<CR>
 
 " Goyo reading
-"map <F5> :Goyo<CR>
-let g:goyo_width = 120
+let g:goyo_width = 80
 
 " Typing jj quickly escapes out of INSERT mode
 imap jk <Esc>

@@ -1,3 +1,2 @@
-test|pdf
-article|pdf -S -N --latex-engine=pdflatex -F scholdoc-citeproc --listings 
-scholtex|latex -S -N --latex-engine=pdflatex --listings --biblatex 
+tex|latex -s --smart --number-sections --listings --latex-engine=pdflatex -F pandoc-crossref -F pandoc-citeproc 
+article|pdf --smart --number-sections --listings --latex-engine=pdflatex -F pandoc-crossref -F pandoc-citeproc 

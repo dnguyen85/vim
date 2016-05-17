@@ -48,6 +48,9 @@ au! FileType python setl nosmartindent
 " Python set tab attributes
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+" Pandoc autocmd
+autocmd Filetype pandoc inoremap <leader>d <!-- --><CR>
+
 set ignorecase
 set smartcase
 
@@ -395,8 +398,6 @@ inoremap <F3> <C-R>=strftime("(%H:%M) ")<CR>
 inoremap <F4> <C-R>=strftime("==== %m/%d/%Y ====\n")<CR>
 " Map <F6> to insert images string in insert mode
 inoremap <F6> <C-R>=strftime("files/%Y_%m_%d_img")<CR>
-" Imap <leader>c
-inoremap <leader>d <!-- --><CR>
 
 " Slime plugin
 let g:slime_target = "tmux"

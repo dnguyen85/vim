@@ -149,3 +149,6 @@
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule "bundle/thesaurus_query.vim"]
+	path = bundle/thesaurus_query.vim
+	url = https://github.com/Ron89/thesaurus_query.vim

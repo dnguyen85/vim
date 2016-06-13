@@ -152,3 +152,6 @@
 [submodule "bundle/thesaurus_query.vim"]
 	path = bundle/thesaurus_query.vim
 	url = https://github.com/Ron89/thesaurus_query.vim
+[submodule "bundle/FastFold"]
+	path = bundle/FastFold
+	url = https://github.com/Konfekt/FastFold

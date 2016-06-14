@@ -1,5 +1,5 @@
 " Should I load minibuf (disabled for splice)?
-let g:pathogen_disabled = ['auto-pairs', 'vim-better-whitespace']
+let g:pathogen_disabled = ['auto-pairs', 'vim-better-whitespace', 'thesaurus_query.vim']
 
 if exists('nodiffchar')
     let g:pathogen_disabled = ['diffchar.vim']
@@ -18,6 +18,11 @@ Enablefiletype matlab auto-pairs
 Enablefiletype c auto-pairs
 Enablefiletype cpp auto-pairs
 Enablefiletype mail vim-better-whitespace
+Enablefiletype mail thesaurus_query.vim
+Enablefiletype gitcommit thesaurus_query.vim
+Enablefiletype tex thesaurus_query.vim
+Enablefiletype markdown thesaurus_query.vim
+Enablefiletype pandoc thesaurus_query.vim
 
 " Colorscheme
 set background=dark

@@ -331,16 +331,8 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.
 
 
 " Spell checking
-" map <F10> :setlocal spell!<CR>
-" set spelllang=en_us
-" highlight clear SpellBad
-" highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-" highlight clear SpellCap
-" highlight SpellCap term=underline cterm=underline
-" highlight clear SpellRare
-" highlight SpellRare term=underline cterm=underline
-" highlight clear SpellLocal
-" highlight SpellLocal term=underline cterm=underline
+set spelllang=en_us
+autocmd FileType gitcommit,tex,pandoc,markdown setlocal spell
 
 " Vimwiki stuff
 let g:vimwiki_html_header_numbering_sym = '.'
@@ -416,11 +408,29 @@ map <F12> :NERDTreeToggle<CR>
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
-""" Neocomplete Setting Starts
+""""""""""""""""""""""""""" Neocomplete Setting Starts """"""""""""""""""""""
 " Enabled at startup?
 " let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
+
+""" Set sources manually
+" if !exists('g:neocomplete#sources')
+    " let g:neocomplete#sources = {}
+" endif
+" let g:neocomplete#sources.tex = ['buffer', 'look']
+
+""" Dictionary complete
+" Define sources
+" let g:neocomplete#sources#dictionary#dictionaries = {
+    " \ 'default' : '',
+    " \ }
+
+" Disable dictionary complete by default
+call neocomplete#custom#source('dictionary', 'disabled', 1)
+" For filetype-specific disabling, see neocomplete-source-attributes
+" call neocomplete#custom#source('dictionary',
+    " \ 'disabled_filetypes', {'tex' : 1})
 
 " ctags comment for include sources
 let g:neocomplete#ctags_command = '/usr/bin/ctags'
@@ -639,6 +649,13 @@ let g:table_mode_motion_down_map = '}}'
 " Thesaurus
 set thesaurus+=~/.thesaurus/mthesaur.txt
 set dictionary+=/usr/share/dict/words
+
+" Thesaurus Query plugin
+let g:tq_online_backends_timeout = 0.6
+let g:tq_mthesaur_file="~/.thesaurus/mthesaur.txt"
+let g:tq_map_keys = 0
+nnoremap <unique> <Leader>st :ThesaurusQueryReplaceCurrentWord<CR>
+vnoremap <unique> <Leader>st "ky:ThesaurusQueryReplace <C-r>k<CR>
 
 " Autopairs
 let g:AutoPairsShortcutJump = '<C-y>' 

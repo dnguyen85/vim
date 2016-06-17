@@ -569,10 +569,18 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 "" Syntastic Syntax checker
-" Always populate location list for latex
-au! FileType tex let g:syntastic_always_populate_loc_list = 1
+" Always populate location list for latex, pandoc, markdown
+au! FileType tex,pandoc,markdown let g:syntastic_always_populate_loc_list = 1
 " Check header files
 let g:syntastic_cpp_check_header = 1
+" Aggregate errors from different checkers
+let g:syntastic_aggregate_errors = 1
+" Set up checkers for tex files
+let g:syntastic_tex_checkers = ['lacheck', 'chktex']
+" Settings for language check
+let g:syntastic_tex_language_check_args = '--language=en-US'
+let g:syntastic_text_checkers = ['language_check']
+let g:syntastic_text_language_check_args = '--language=en-US'
 
 "## diffchar plugin
 let g:DiffUnit = "Word1"

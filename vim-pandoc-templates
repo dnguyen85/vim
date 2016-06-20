@@ -1,2 +1,2 @@
 tex|latex -s --smart --number-sections --listings --latex-engine=pdflatex -F pandoc-crossref -F pandoc-citeproc 
-article|pdf --smart --number-sections --listings --latex-engine=pdflatex -F pandoc-crossref -F pandoc-citeproc 
+article|pdf --smart --number-sections --listings --latex-engine=pdflatex --template=pandoc_template.tex -F pandoc-crossref -F pandoc-citeproc 

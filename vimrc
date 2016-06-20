@@ -54,14 +54,12 @@ au! FileType python setl nosmartindent
 " Python set tab attributes
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-" Pandoc autocmd
-autocmd Filetype pandoc inoremap <leader>d <!-- --><CR>
-
 set ignorecase
 set smartcase
 
 " Set folding
 " set foldmethod=syntax
+let g:fastfold_skipfiles = ['tex']
 
 if has("gui_running")
     " Set window size
@@ -337,7 +335,7 @@ omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.
 
 " Spell checking
 set spelllang=en_us
-autocmd FileType gitcommit,tex,pandoc,markdown setlocal spell
+autocmd FileType gitcommit,tex,pandoc,markdown,mail setlocal spell
 
 " Vimwiki stuff
 let g:vimwiki_html_header_numbering_sym = '.'
@@ -575,12 +573,24 @@ au! FileType tex,pandoc,markdown let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_cpp_check_header = 1
 " Aggregate errors from different checkers
 let g:syntastic_aggregate_errors = 1
+" Filetype map for non-supported filetypes
+let g:syntastic_filetype_map = {
+    \ "mail": "text",
+    \ "pandoc": "markdown", 
+    \ }
+" Mode map for auto-checking on saves
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["tex", "markdown", "pandoc", "text"] }
 " Set up checkers for tex files
-let g:syntastic_tex_checkers = ['lacheck', 'chktex']
-" Settings for language check
-let g:syntastic_tex_language_check_args = '--language=en-US'
-let g:syntastic_text_checkers = ['language_check']
-let g:syntastic_text_language_check_args = '--language=en-US'
+let g:syntastic_tex_checkers = ['lacheck', 'chktex', 'language_check']
+let g:syntastic_tex_language_check_args = '--language=en-US --disable=WHITESPACE_RULE,'
+    \ . 'MORFOLOGIK_RULE_EN_US,EN_QUOTES,COMMA_PARENTHESIS_WHITESPACE,CURRENCY,EN_UNPAIRED_BRACKETS'
+" Markdown files
+let g:syntastic_markdown_checkers = ['textlint']
+" Text files
+let g:syntastic_text_checkers = ['textlint']
 
 "## diffchar plugin
 let g:DiffUnit = "Word1"
@@ -633,6 +643,10 @@ endfunc
 map <localleader>c :Pandoc #article<CR>
 map <localleader>C :Pandoc! #article<CR>
 map <localleader>r :Pandoc revealjs<CR>
+
+" Pandoc autocmd
+inoremap <leader>d <!-- --><CR>
+
 let g:pandoc#formatting#mode = 's'
 let g:pandoc#formatting#smart_autoformat_on_cursormoved = 0
 let g:pandoc#formatting#textwidth = 80
@@ -667,8 +681,8 @@ set dictionary+=/usr/share/dict/words
 let g:tq_online_backends_timeout = 0.6
 let g:tq_mthesaur_file="~/.thesaurus/mthesaur.txt"
 let g:tq_map_keys = 0
-nnoremap <unique> <Leader>st :ThesaurusQueryReplaceCurrentWord<CR>
-vnoremap <unique> <Leader>st "ky:ThesaurusQueryReplace <C-r>k<CR>
+nnoremap <Leader>st :ThesaurusQueryReplaceCurrentWord<CR>
+vnoremap <Leader>st "ky:ThesaurusQueryReplace <C-r>k<CR>
 
 " Autopairs
 let g:AutoPairsShortcutJump = '<C-y>' 

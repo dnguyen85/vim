@@ -155,3 +155,6 @@
 [submodule "bundle/FastFold"]
 	path = bundle/FastFold
 	url = https://github.com/Konfekt/FastFold
+[submodule "bundle/syntastic-grammar-checkers"]
+	path = bundle/syntastic-grammar-checkers
+	url = https://github.com/dnguyen85/syntastic-grammar-checkers

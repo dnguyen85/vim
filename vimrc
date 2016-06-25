@@ -576,21 +576,23 @@ let g:syntastic_aggregate_errors = 1
 " Filetype map for non-supported filetypes
 let g:syntastic_filetype_map = {
     \ "mail": "text",
-    \ "pandoc": "markdown", 
+    \ "pandoc": "text", 
     \ }
 " Mode map for auto-checking on saves
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": [],
-    \ "passive_filetypes": ["tex", "markdown", "pandoc", "text"] }
+    \ "passive_filetypes": ["tex", "markdown", "pandoc", "text", "mail", "gitcommit"] }
 " Set up checkers for tex files
-let g:syntastic_tex_checkers = ['lacheck', 'chktex', 'language_check']
+let g:syntastic_tex_checkers = ['lacheck', 'chktex', 'language_check', 'proselint']
 let g:syntastic_tex_language_check_args = '--language=en-US --disable=WHITESPACE_RULE,'
     \ . 'MORFOLOGIK_RULE_EN_US,EN_QUOTES,COMMA_PARENTHESIS_WHITESPACE,CURRENCY,EN_UNPAIRED_BRACKETS'
-" Markdown files
-let g:syntastic_markdown_checkers = ['textlint']
-" Text files
-let g:syntastic_text_checkers = ['textlint']
+" Markdown files - not used anymore
+" let g:syntastic_markdown_checkers = ['textlint']
+" Text files - why?
+let g:syntastic_text_checkers = ['language_check', 'proselint']
+let g:syntastic_text_language_check_args = '--language=en-US --disable=WHITESPACE_RULE,'
+    \ . 'MORFOLOGIK_RULE_EN_US,EN_QUOTES,COMMA_PARENTHESIS_WHITESPACE,CURRENCY,EN_UNPAIRED_BRACKETS'
 
 "## diffchar plugin
 let g:DiffUnit = "Word1"

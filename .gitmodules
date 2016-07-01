@@ -145,7 +145,7 @@
 	url = https://github.com/esquires/vim-matlab-fold
 [submodule "bundle/vim-pandoc"]
 	path = bundle/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc
+	url = https://github.com/dnguyen85/vim-pandoc
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
@@ -163,4 +163,4 @@
 	url = https://github.com/davidbeckingsale/writegood.vim
 [submodule "bundle/vim-stardict"]
 	path = bundle/vim-stardict
-	url = https://github.com/vim-scripts/vim-stardict
+	url = https://github.com/dnguyen85/vim-stardict

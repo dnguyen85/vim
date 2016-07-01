@@ -679,6 +679,12 @@ let g:table_mode_motion_down_map = '}}'
 set thesaurus+=~/.thesaurus/mthesaur.txt
 set dictionary+=/usr/share/dict/words
 
+" Dictionary lookup vim-stardict
+" Ready for typing the word in
+nnoremap <leader>sd :StarDict<Space>
+" Lookup the word under cursor
+nnoremap <leader>sc :StarDictCursor<CR>
+
 " Thesaurus Query plugin
 let g:tq_online_backends_timeout = 0.6
 let g:tq_mthesaur_file="~/.thesaurus/mthesaur.txt"

@@ -158,3 +158,9 @@
 [submodule "bundle/syntastic-grammar-checkers"]
 	path = bundle/syntastic-grammar-checkers
 	url = https://github.com/dnguyen85/syntastic-grammar-checkers
+[submodule "bundle/writegood.vim"]
+	path = bundle/writegood.vim
+	url = https://github.com/davidbeckingsale/writegood.vim
+[submodule "bundle/vim-stardict"]
+	path = bundle/vim-stardict
+	url = https://github.com/vim-scripts/vim-stardict

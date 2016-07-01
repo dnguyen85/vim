@@ -18,7 +18,7 @@
 	url = https://github.com/kien/ctrlp.vim.git
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
-	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vim-latex
+	url = https://github.com/dnguyen85/vim-latex 
 [submodule "bundle/vim-node"]
 	path = bundle/vim-node
 	url = https://github.com/moll/vim-node.git
@@ -27,8 +27,7 @@
 	url = https://github.com/jelera/vim-javascript-syntax.git
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
-    #url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vimwiki
-    url = https://github.com/dang2327/vimwiki.git 
+    url = https://github.com/dnguyen85/vimwiki.git 
 [submodule "bundle/vim-slime"]
 	path = bundle/vim-slime
 	url = https://github.com/jpalardy/vim-slime.git
@@ -40,7 +39,7 @@
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "bundle/vim-matlab"]
 	path = bundle/vim-matlab
-	url = dhn24@dwsl.ece.drexel.edu:~/vim_bundles/vim-matlab
+	url = https://github.com/dnguyen85/vim-matlab
 [submodule "bundle/tern_for_vim"]
 	path = bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
@@ -73,16 +72,16 @@
 	url = https://github.com/Shougo/neocomplete.vim
 [submodule "bundle/neosnippet-snippets"]
 	path = bundle/neosnippet-snippets
-	url = https://github.com/dang2327/neosnippet-snippets
+	url = https://github.com/dnguyen85/neosnippet-snippets
 [submodule "bundle/vim-mako"]
 	path = bundle/vim-mako
-	url = https://github.com/dang2327/vim-bundle-mako.git  
+	url = https://github.com/dnguyen85/vim-bundle-mako.git  
 [submodule "bundle/context_filetype.vim"]
 	path = bundle/context_filetype.vim
 	url = https://github.com/Shougo/context_filetype.vim
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
-	url = https://github.com/dang2327/vim-snippets
+	url = https://github.com/dnguyen85/vim-snippets
 [submodule "bundle/vim-pandoc-syntax"]
 	path = bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git

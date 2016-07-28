@@ -163,3 +163,6 @@
 [submodule "bundle/vim-stardict"]
 	path = bundle/vim-stardict
 	url = https://github.com/dnguyen85/vim-stardict
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch

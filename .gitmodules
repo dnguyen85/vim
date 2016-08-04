@@ -63,7 +63,7 @@
 	url = https://github.com/mbr0wn/grproject.vim.git
 [submodule "bundle/vimoutliner"]
 	path = bundle/vimoutliner
-	url = https://github.com/vimoutliner/vimoutliner
+	url = https://github.com/dnguyen85/vimoutliner
 [submodule "bundle/splice.vim"]
 	path = bundle/splice.vim
 	url = https://github.com/sjl/splice.vim.git

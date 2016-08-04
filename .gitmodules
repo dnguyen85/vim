@@ -166,3 +166,6 @@
 [submodule "bundle/vim-dispatch"]
 	path = bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
+[submodule "bundle/mail-checkattach"]
+	path = bundle/mail-checkattach
+	url = https://github.com/chrisbra/CheckAttach

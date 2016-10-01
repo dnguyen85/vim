@@ -172,3 +172,6 @@
 [submodule "bundle/quickr-cscope.vim"]
 	path = bundle/quickr-cscope.vim
 	url = https://github.com/ronakg/quickr-cscope.vim
+[submodule "bundle/vim-airline-themes"]
+	path = bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes

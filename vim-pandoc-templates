@@ -1,3 +1,3 @@
-article|pdf --smart -V geometry:margin=1in --number-sections --listings --latex-engine=pdflatex --template=pandoc_template.tex -F pandoc-crossref -F pandoc-citeproc 
-tex|latex -s --smart -V geometry:margin=1in --number-sections --listings --latex-engine=pdflatex --template=pandoc_template.tex -F pandoc-crossref -F pandoc-citeproc 
+article|pdf --smart --number-sections --listings --latex-engine=pdflatex --template=pandoc_template.tex -F pandoc-crossref -F pandoc-citeproc 
+tex|latex -s --smart --number-sections --listings --latex-engine=pdflatex --template=pandoc_template.tex -F pandoc-crossref -F pandoc-citeproc 
 docx|docx -s --smart --number-sections -F pandoc-crossref -F pandoc-citeproc

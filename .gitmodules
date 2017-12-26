@@ -184,3 +184,6 @@
 [submodule "bundle/vim-vp4"]
 	path = bundle/vim-vp4
 	url = https://github.com/ngemily/vim-vp4
+[submodule "bundle/vim-rtags"]
+	path = bundle/vim-rtags
+	url = https://github.com/lyuts/vim-rtags

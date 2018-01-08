@@ -184,3 +184,6 @@
 [submodule "bundle/vim-rtags"]
 	path = bundle/vim-rtags
 	url = https://github.com/lyuts/vim-rtags
+[submodule "bundle/vim-verilog"]
+	path = bundle/vim-verilog
+	url = https://github.com/vhda/verilog_systemverilog.vim

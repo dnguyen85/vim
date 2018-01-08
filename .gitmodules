@@ -15,7 +15,7 @@
 	url = git://github.com/tpope/vim-unimpaired.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "bundle/vim-latex"]
 	path = bundle/vim-latex
 	url = https://github.com/dnguyen85/vim-latex 
@@ -187,3 +187,6 @@
 [submodule "bundle/vim-verilog"]
 	path = bundle/vim-verilog
 	url = https://github.com/vhda/verilog_systemverilog.vim
+[submodule "bundle/vim-windowswap"]
+	path = bundle/vim-windowswap
+	url = https://github.com/wesQ3/vim-windowswap

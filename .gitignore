@@ -1,3 +1,4 @@
+plug.vim
 *.pyc
 .netrwhist
 plugged/

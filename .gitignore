@@ -1,7 +1,6 @@
 *.pyc
 .netrwhist
-eclim/
-plugin/eclim.vim
+plugged/
 *tags
 *tags/
 *.swp

@@ -625,7 +625,10 @@ func s:InstallCommands()
   let save_cpo = &cpo
   set cpo&vim
 
-  command Break call s:SetBreakpoint()
+  command -nargs=? Break call s:SetBreakpoint(<q-args>)
+  command! Until call s:SendUntil()
+  command! -range EvalVisual call s:EvaluateVisual()
+  command! Advance call s:SendAdvance()
   command Clear call s:ClearBreakpoint()
   command Step call s:SendCommand('-exec-step')
   command Over call s:SendCommand('-exec-next')
@@ -658,6 +661,9 @@ endfunc
 " Delete installed debugger commands in the current window.
 func s:DeleteCommands()
   delcommand Break
+  delcommand Advance
+  delcommand Until
+  delCommand EvalVisual
   delcommand Clear
   delcommand Step
   delcommand Over
@@ -691,7 +697,7 @@ func s:DeleteCommands()
 endfunc
 
 " :Break - Set a breakpoint at the cursor position.
-func s:SetBreakpoint()
+func s:SetBreakpoint(at)
   " Setting a breakpoint may not work while the program is running.
   " Interrupt to make it work.
   let do_continue = 0
@@ -704,12 +710,26 @@ func s:SetBreakpoint()
     endif
     sleep 10m
   endif
+
   " Use the fname:lnum format, older gdb can't handle --source.
-  call s:SendCommand('-break-insert '
-        \ . fnameescape(expand('%:p')) . ':' . line('.'))
+  let at = empty(a:at) ?
+        \ fnameescape(expand('%:p')) . ':' . line('.') : a:at
+  call s:SendCommand('-break-insert ' . at)
   if do_continue
     call s:SendCommand('-exec-continue')
   endif
+endfunc
+
+" :Until - Execute until line
+func s:SendUntil()
+  let at = fnameescape(expand('%:p')) . ':' . line('.')
+  call TermDebugSendCommand('until ' . at) 
+endfunc
+
+" :Advance - Execute until line
+func s:SendAdvance()
+  let at = fnameescape(expand('%:p')) . ':' . line('.')
+  call TermDebugSendCommand('advance ' . at) 
 endfunc
 
 " :Clear - Delete a breakpoint at the cursor position.
@@ -1110,6 +1130,23 @@ func s:BufUnloaded()
       endif
     endfor
   endfor
+endfunc
+
+func s:GetVisualSelection()
+    "Shamefully stolen from http://stackoverflow.com/a/6271254/794380
+    " Why is this not a built-in Vim script function?!
+    let [lnum1, col1] = getpos("'<")[1:2]
+    let [lnum2, col2] = getpos("'>")[1:2]
+    let lines = getline(lnum1, lnum2)
+    let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
+    let lines[0] = lines[0][col1 - 1:]
+    return join(lines, "\n")
+endfunction
+
+" :EvaludateVisual
+func s:EvaluateVisual()
+  let at = s:GetVisualSelection()
+  call TermDebugSendCommand('p ' . at) 
 endfunc
 
 let &cpo = s:keepcpo

@@ -332,6 +332,8 @@ func s:StartDebug_prompt(dict)
     call s:CloseBuffers()
     return
   endif
+  " Mark the buffer modified so that it's not easy to close.
+  set modified
 
   " Interpret commands while the target is running.  This should usualy only
   " be exec-interrupt, since many commands don't work properly while the
@@ -651,7 +653,7 @@ func s:InstallCommands()
   " command Winbar call s:InstallWinbar()
 
   " TODO: can the K mapping be restored?
-  nnoremap K :Evaluate<CR>
+  nnoremap <M-k> :Evaluate<CR>
 
   let &cpo = save_cpo
 endfunc
@@ -663,7 +665,7 @@ func s:DeleteCommands()
   delcommand Break
   delcommand Advance
   delcommand Until
-  delCommand EvalVisual
+  delcommand EvalVisual
   delcommand Clear
   delcommand Step
   delcommand Over
@@ -678,7 +680,7 @@ func s:DeleteCommands()
   delcommand Source
   " delcommand Winbar
 
-  nunmap K
+  nunmap <M-k>
 
   exe 'sign unplace ' . s:pc_id
   for [id, entries] in items(s:breakpoints)
